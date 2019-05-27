@@ -7,7 +7,7 @@ import java.util.Properties;
 /**
  * The Class DBProperties.
  *
- * @author Jean-Aymeric Diet
+ * @author Jean-Aymeric Diet, Bruno Clappe
  */
 class DBProperties extends Properties {
 
@@ -25,7 +25,10 @@ class DBProperties extends Properties {
 
 	/** The password. */
 	private String							password							= "";
-
+	
+	/** The level to get from the database*/
+	private int gameLevel = 1;
+	
 	/**
 	 * Instantiates a new DB properties.
 	 */
@@ -43,6 +46,7 @@ class DBProperties extends Properties {
 			this.setUrl(this.getProperty("url"));
 			this.setLogin(this.getProperty("login"));
 			this.setPassword(this.getProperty("password"));
+			this.setGameLevel(Integer.parseInt(this.getProperty("level")));
 		}
 	}
 
@@ -102,5 +106,25 @@ class DBProperties extends Properties {
 	private void setPassword(final String password) {
 		this.password = password;
 	}
+	
+	/**
+	 * Get the level number
+	 * 
+	 * @return the game level
+	 */
+	public int getGameLevel() {
+		return this.gameLevel;
+	}
+	
+	/**
+	 * Set the level number
+	 * 
+	 * @param level
+	 */
+	private void setGameLevel(int level) {
+		if(level>0 && level<6) {
+			this.gameLevel=level;	
+		}
 
+	}
 }
