@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Observable;
 
 import contract.IModel;
-import entity.HelloWorld;
+import model.Map;
 
 /**
  * The Class Model.
@@ -60,7 +60,7 @@ public final class Model extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage(java.lang.String)
 	 */
-	public void loadHelloWorld(final int code) {
+	public void loadMap(final int code) {
 		try {
 			final DAOMap daoMap = new DAOMap(DBConnection.getInstance().getConnection());
 			this.setMap(daoMap.find(code));

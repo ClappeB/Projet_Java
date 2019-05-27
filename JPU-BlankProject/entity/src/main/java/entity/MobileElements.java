@@ -2,8 +2,8 @@ package entity;
 
 public abstract class MobileElements extends Entity {
 	
-	MobileElements() {
-		
+	MobileElements(Sprite sprite, Permeability permeability) {
+		super(sprite, permeability);
 	}
 	
 	public void goUp() {
