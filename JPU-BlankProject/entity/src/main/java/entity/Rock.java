@@ -9,7 +9,7 @@ public class Rock extends Gravity implements IKill{
 		}
 		
 		public void pushedLeft() {
-			
+			//hello
 		}
 		
 		public void pushedRight() {
