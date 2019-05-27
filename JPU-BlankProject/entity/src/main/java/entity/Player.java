@@ -21,4 +21,10 @@ public class Player extends Killable {
 	public void setDiamondNumber(int diamondNumber) {
 		this.diamondNumber = diamondNumber;
 	}
+	
+	public void checkMonster(Entity blockUp, Entity blockLeft, Entity blockRight, Entity blockDown) {
+		if(blockUp instanceof Monster || blockLeft instanceof Monster || blockRight instanceof Monster || blockDown instanceof Monster) {
+			this.setIsAlive(false);
+		}
+	}
 }
