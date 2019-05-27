@@ -7,7 +7,11 @@ public abstract class Gravity extends MobileElements {
 		}
 		
 		public void fall() {
-			if(this.getPosY()-1 instanceof BackgroundDirt ) {
+			if(this.getPosY() == UnbreakableBlock.getPosY()) {
+				this.goRight();
+				this.goDown();
+			}
+			else if(this.getPosY() == BackgroundDirt.getPosY()) {
 				
 			}
 		}

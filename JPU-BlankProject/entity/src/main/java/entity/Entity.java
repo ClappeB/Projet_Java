@@ -41,7 +41,7 @@ public abstract class Entity {
 		this.posX = posX;
 	}
 
-	public int getPosY() {
+	public  int getPosY() {
 		return posY;
 	}
 
