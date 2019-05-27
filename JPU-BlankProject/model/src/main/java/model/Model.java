@@ -9,7 +9,7 @@ import model.Map;
 /**
  * The Class Model.
  *
- * @author Jean-Aymeric Diet
+ * @author Jean-Aymeric Diet, Bruno Clappe
  */
 public final class Model extends Observable implements IModel {
 
@@ -23,25 +23,20 @@ public final class Model extends Observable implements IModel {
 		
 	}
 
+
 	/**
-     * Gets the hello world.
-     *
-     * @return the hello world
-     */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IModel#getMessage()
+	 * Get the map
+	 * @return Map
 	 */
 	public Map getMap() {
 		return this.map;
 	}
 
 	/**
-     * Sets the hello world.
+     * Sets the map.
      *
-     * @param helloWorld
-     *            the new hello world
+     * @param map
+     *            the new map
      */
 	private void setMap(final Map map) {
 		this.map = map;
