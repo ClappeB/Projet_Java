@@ -2,6 +2,7 @@ package contract;
 
 import java.util.Observable;
 
+import entity.Map;
 /**
  * The Interface IModel.
  *
@@ -9,12 +10,12 @@ import java.util.Observable;
  */
 public interface IModel {
 
-//	/**
-//	 * Gets the hello world.
-//	 *
-//	 * @return the helloworld entity
-//	 */
-//	Map getMap();
+	/**
+	 * Gets the hello world.
+	 *
+	 * @return the helloworld entity
+	 */
+	Map getMap();
 
 	/**
 	 * Load the map.
