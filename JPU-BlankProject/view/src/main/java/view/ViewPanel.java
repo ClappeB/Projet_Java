@@ -35,7 +35,7 @@ class ViewPanel extends JPanel implements Observer {
 	 *
 	 * @return the view frame
 	 */
-	private ViewFrame getViewFrame() {²²²²
+	private ViewFrame getViewFrame() {
 		return this.viewFrame;
 	}
 
@@ -89,4 +89,5 @@ class ViewPanel extends JPanel implements Observer {
             }
         }
 
-    }
+	}
+}

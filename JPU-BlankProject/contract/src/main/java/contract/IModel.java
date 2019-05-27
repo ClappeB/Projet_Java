@@ -11,9 +11,9 @@ import entity.Map;
 public interface IModel {
 
 	/**
-	 * Gets the hello world.
+	 * Gets map.
 	 *
-	 * @return the helloworld entity
+	 * @return the map
 	 */
 	Map getMap();
 
