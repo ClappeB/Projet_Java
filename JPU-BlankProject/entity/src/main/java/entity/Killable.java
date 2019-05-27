@@ -1,9 +1,13 @@
 package entity;
 
-public abstract class Killable {
-
+public abstract class Killable extends MobileElements {
+		
 		private boolean isAlive = true;
-
+		
+		Killable(Sprite sprite, Permeability permeability){
+			super(sprite, permeability);
+		}
+		
 		public boolean isLifeStatus() {
 			return isAlive;
 		}

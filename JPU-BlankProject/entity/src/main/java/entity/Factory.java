@@ -1,10 +1,8 @@
 package entity;
 
 public abstract class Factory {
-
-	Factory() {
-		
-	}
+	
+	private static Player player = new Player();	
 	
 	public MobileElements createDiamond() {
 		return null;
@@ -39,7 +37,26 @@ public abstract class Factory {
 	}
 	
 	public static Entity getFromFileSymbol(char symbol) {
-		return new Diamond();
+		switch(symbol) {
+			case '.':
+				return new Dirt();
+			case 'R':
+				return new Rock();
+			case 'U':
+				return new UnbreakableBlock();
+			case 'B':
+				return new BackgroundDirt();
+			case 'D':
+				return new Diamond();
+			case 'M':
+				return new Monster();
+			case 'P':
+				return player;
+			case 'E':
+				return new Exit();
+			default :
+				return null;
+		}
 	}
 	
 }
