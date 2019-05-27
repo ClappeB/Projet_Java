@@ -32,7 +32,8 @@ public class Sprite {
 	 * 				The image name which indicates which image needs to be loaded
 	 */
 	public Sprite(final char character, final String imageName) {
-		
+		 this.setConsoleImage(character);
+	     this.setImageName(imageName);
 	}
 	
 	/**
@@ -42,7 +43,7 @@ public class Sprite {
 	 * 				The character on the console
 	 */
 	public Sprite(final char character) {
-		
+		this(character, "noimage.jpg");
 	}
 	
 	/**

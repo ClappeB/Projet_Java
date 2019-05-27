@@ -12,8 +12,9 @@ public abstract class Entity {
 	private int posX;
 	private int posY;
 	
-	Entity() {
-		
+	Entity(Sprite sprite, Permeability permeability) {
+		this.setSprite(sprite);
+		this.setPermeability(permeability);
 	}
 
 	public Sprite getSprite() {
