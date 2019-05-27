@@ -2,13 +2,13 @@ package entity;
 
 public class Player extends Killable {
 	
-	private int diamondNumber;
+	private static int diamondNumber;
 	
 	Player() {
 		
 	}
 
-	public int getDiamondNumber() {
+	public static int getDiamondNumber() {
 		return diamondNumber;
 	}
 
