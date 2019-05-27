@@ -9,6 +9,6 @@ public class Diamond extends Gravity implements IKill{
 	}
 	
 	public void kill(Killable killable) {
-		killable.setLifeStatus(false);
+		killable.setIsAlive(false);
 	}
 }

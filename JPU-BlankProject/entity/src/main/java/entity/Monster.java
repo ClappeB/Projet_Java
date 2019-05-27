@@ -14,7 +14,7 @@ public class Monster extends Killable implements IKill{
 	
 	public void kill(Killable killable) {
 		if(killable instanceof Player) {
-			killable.setLifeStatus(false);
+			killable.setIsAlive(false);
 		}
 	}
 }

@@ -8,11 +8,11 @@ public abstract class Killable extends MobileElements {
 			super(sprite, permeability);
 		}
 		
-		public boolean isLifeStatus() {
+		public boolean isAlive() {
 			return isAlive;
 		}
 
-		public void setLifeStatus(boolean isAlive) {
+		public void setIsAlive(boolean isAlive) {
 			this.isAlive = isAlive;
 		}
 }
