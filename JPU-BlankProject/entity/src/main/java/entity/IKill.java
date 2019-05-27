@@ -2,5 +2,5 @@ package entity;
 
 public interface IKill {
 	
-	public void kill();
+	public void kill(Killable killable);
 }
