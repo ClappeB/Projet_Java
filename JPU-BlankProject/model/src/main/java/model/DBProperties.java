@@ -46,6 +46,7 @@ class DBProperties extends Properties {
 		}
 	}
 
+	
 	/**
 	 * Gets the url.
 	 *
