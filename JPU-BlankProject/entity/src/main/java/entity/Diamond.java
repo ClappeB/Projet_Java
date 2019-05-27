@@ -2,14 +2,15 @@ package entity;
 
 public class Diamond extends Gravity implements IKill{
 	
-	private static Sprite sprite = new Sprite('P', "Image jeu/Diamand/Diamand.png");
-	private static final Permeability permeability = Permeability.UNBLOCKING;
+	private static Sprite SPRITE = new Sprite('P', "diamond.png");
 	
 	Diamond() {
-		super(sprite, permeability);
+		super(SPRITE, Permeability.UNBLOCKING);
 	}
 	
 	public void kill() {
-		
+		if() {
+			Player.isAlive() = False;
+		}
 	}
 }

@@ -6,7 +6,7 @@ public abstract class MobileElements extends Entity {
 		super(sprite, permeability);
 	}
 	
-	public void goUp() {
+	public void goUp(Entity e) {
 		this.setPosY(this.getPosY() - 1);
 	}
 	
