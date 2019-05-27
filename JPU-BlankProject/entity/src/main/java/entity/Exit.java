@@ -2,7 +2,7 @@ package entity;
 
 public class Exit extends MotionLessElements {
 
-	private static final Sprite SPRITE = new Sprite('e', ".png");
+	private static final Sprite SPRITE = new Sprite('e', "unbreakableBlock.png");
 	private Sprite EXIT = new Sprite('e', "exit.png");
 			
 	Exit() {
