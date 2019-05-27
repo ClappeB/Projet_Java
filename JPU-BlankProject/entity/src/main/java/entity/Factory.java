@@ -37,4 +37,9 @@ public abstract class Factory {
 	public MobileElements createBackgroundDirt() {
 		return null;
 	}
+	
+	public static Entity getFromFileSymbol(char symbol) {
+		return new Diamond();
+	}
+	
 }
