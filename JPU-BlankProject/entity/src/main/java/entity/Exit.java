@@ -6,7 +6,6 @@ public class Exit extends MotionLessElements {
 	private Sprite EXIT = new Sprite('e', "Porte.png");
 			
 	Exit() {
-		
 		super(SPRITE, Permeability.BLOCKING);
 	}
 	
