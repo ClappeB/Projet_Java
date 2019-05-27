@@ -2,58 +2,66 @@ package entity;
 
 public abstract class Factory {
 	
-	private static Player player = new Player();	
+	private static Player player = null;
+	private static Exit exit = null;
 	
-	public MobileElements createDiamond() {
-		return null;
+	public static Entity createDiamond() {
+		return new Diamond();
 	}
 	
-	public MobileElements createRock() {
-		return null;
+	public static Entity createRock() {
+		return new Rock();
 	}
 	
-	public MobileElements createMonster() {
-		return null;
+	public static Entity createMonster() {
+		return new Monster();
 	}
 	
-	public MobileElements createPlayer() {
-		return null;
+	public static Entity createPlayer() {
+		
+		if(player==null) {
+			player = new Player();
+		}
+		return player;
 	}
 	
-	public MobileElements createExit() {
-		return null;
+	public static Entity createExit() {
+		if(exit==null) {
+			exit = new Exit();
+		}
+		return exit;
 	}
 	
-	public MobileElements createDirt() {
-		return null;
+	public static Entity createDirt() {
+		return new Dirt();
 	}
 	
-	public MobileElements createUnbreakableBlock() {
-		return null;
+	public static Entity createUnbreakableBlock() {
+		return new UnbreakableBlock();
 	}
 	
-	public MobileElements createBackgroundDirt() {
-		return null;
+	public static Entity createBackgroundDirt() {
+		return new BackgroundDirt();
 	}
 	
 	public static Entity getFromFileSymbol(char symbol) {
 		switch(symbol) {
 			case '.':
-				return new Dirt();
+				return createDirt();
 			case 'R':
-				return new Rock();
+				return createRock();
 			case 'U':
-				return new UnbreakableBlock();
+				return createUnbreakableBlock();
 			case 'B':
-				return new BackgroundDirt();
+				return createBackgroundDirt();
 			case 'D':
-				return new Diamond();
+				return createDiamond();
 			case 'M':
-				return new Monster();
+				return createMonster();
 			case 'P':
-				return player;
+				return createPlayer();
 			case 'E':
-				return new Exit();
+				return createExit();
 			default :
 				return null;
 		}
