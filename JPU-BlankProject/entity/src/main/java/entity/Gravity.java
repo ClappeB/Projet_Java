@@ -18,6 +18,7 @@ public abstract class Gravity extends MobileElements {
 				this.goRight();
 				this.goDown();
 			}
+			
 		}
 }
 
