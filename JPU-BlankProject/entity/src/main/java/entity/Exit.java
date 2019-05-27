@@ -12,6 +12,7 @@ public class Exit extends MotionLessElements {
 	public void diamondCheck() {
 		if(Player.getDiamondNumber() <= 5) {
 			this.setSprite(EXIT);
+			this.setPermeability(Permeability.UNBLOCKING);
 		}
 	}
 }
