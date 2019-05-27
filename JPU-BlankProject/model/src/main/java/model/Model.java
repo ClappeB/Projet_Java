@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Observable;
 
 import contract.IModel;
-import model.Map;
+import entity.Map;
 
 /**
  * The Class Model.
