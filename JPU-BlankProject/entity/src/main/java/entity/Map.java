@@ -73,5 +73,10 @@ public class Map {
 			
 		}
 	}
+
+	public Entity[][] getContent() {
+		// TODO Auto-generated method stub
+		return map;
+	}
 }
 

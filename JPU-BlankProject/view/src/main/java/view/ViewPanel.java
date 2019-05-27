@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Graphics;
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -34,14 +35,14 @@ class ViewPanel extends JPanel implements Observer {
 	 *
 	 * @return the view frame
 	 */
-	private ViewFrame getViewFrame() {
+	private ViewFrame getViewFrame() {²²²²
 		return this.viewFrame;
 	}
 
 	/**
 	 * Sets the view frame.
 	 *
-	 * @param viewFrame
+	 * @param viewFrame7
 	 *          the new view frame
 	 */
 	private void setViewFrame(final ViewFrame viewFrame) {
@@ -63,8 +64,29 @@ class ViewPanel extends JPanel implements Observer {
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
 	@Override
-	protected void paintComponent(final Graphics graphics) {
-		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
-		graphics.drawString(this.getViewFrame().getModel().getHelloWorld().getMessage(), 10, 20);
-	}
-}
+	   protected void paintComponent(final Graphics graphics) {
+        graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
+
+        //        graphics.drawString(this.getViewFrame().getModel().getHelloWorld().getMessage(), 10, 20);
+        //        graphics.drawString(this.getViewFrame().getModel().getHelloWorld().getMessage(), 25, 40);
+        try {
+            for(int y=0; y < this.getViewFrame().getModel().getMap().getHeight(); y++)
+            {
+                for(int x=0; x < this.getViewFrame().getModel().getMap().getWidth(); x++)
+                {
+                    this.getViewFrame().getModel().getMap().getContent()[x][y].getSprite().loadImage();
+                }
+            }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        for(int y=0; y < this.getViewFrame().getModel().getMap().getHeight(); y++)
+        {
+            for(int x=0; x < this.getViewFrame().getModel().getMap().getWidth(); x++)
+            {
+                graphics.drawImage(this.getViewFrame().getModel().getMap().getContent()[x][y].getSprite().getImage(), x*32, y*32, this);
+            }
+        }
+
+    }

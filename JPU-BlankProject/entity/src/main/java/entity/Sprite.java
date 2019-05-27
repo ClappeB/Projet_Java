@@ -1,6 +1,10 @@
 package entity;
 
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 /**
  * <h1>Sprite class<h1>
@@ -116,9 +120,10 @@ public class Sprite {
 	
 	/**
 	 * Load the image in the sprite
+	 * @throws IOException 
 	 */
-	public void loadImage() {
-		
+	public void loadImage() throws IOException {
+		this.setImage(ImageIO.read(new File("..\\image jeu\\" + this.getImageName())));
 	}
 	
 }
