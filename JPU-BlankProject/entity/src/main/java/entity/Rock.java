@@ -8,12 +8,16 @@ public class Rock extends Gravity implements IKill{
 			super(SPRITE, Permeability.BLOCKING);
 		}
 		
-		public void pushedLeft() {
-			//hello
+		public void pushedLeft(Entity blockLeft) {
+			if(blockLeft instanceof BackgroundDirt) {
+				this.goLeft();
+			}
 		}
 		
-		public void pushedRight() {
-			
+		public void pushedRight(Entity blockRight) {
+			if(blockRight instanceof BackgroundDirt) {
+				this.goRight();
+			}
 		}
 		
 		public void kill(Killable killable) {

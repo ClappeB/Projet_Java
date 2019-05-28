@@ -27,4 +27,40 @@ public class Player extends Killable {
 			this.setIsAlive(false);
 		}
 	}
+	
+	public void goUp(Entity blockUp) {
+		if(blockUp instanceof BackgroundDirt) {
+			this.goUp();
+		} else if(blockUp instanceof Dirt) {
+			this.goUp();
+			blockUp.setSprite(new Sprite('B', "BackgroundDirt"));
+		}
+	}
+		
+	public void goDown(Entity blockDown) {
+		if(blockDown instanceof BackgroundDirt) {
+			this.goDown();
+		} else if(blockDown instanceof Dirt) {
+			this.goDown();
+			blockDown.setSprite(new Sprite('B', "BackgroundDirt"));
+		}
+	}
+		
+	public void goLeft(Entity blockLeft) {
+		if(blockLeft instanceof BackgroundDirt) {
+			this.goLeft();
+		} else if(blockLeft instanceof Dirt) {
+			this.goLeft();
+			blockLeft.setSprite(new Sprite('B', "BackgroundDirt"));
+		}
+	}
+		
+	public void goRight(Entity blockRight) {
+		if(blockRight instanceof BackgroundDirt) {
+			this.goRight();
+		} else if(blockRight instanceof Dirt) {
+			this.goRight();
+			blockRight.setSprite(new Sprite('B', "BackgroundDirt"));
+		}
+	}
 }
