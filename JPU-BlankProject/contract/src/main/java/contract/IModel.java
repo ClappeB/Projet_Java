@@ -19,9 +19,6 @@ public interface IModel {
 
 	/**
 	 * Load the map.
-	 *
-	 * @param code
-	 *          the code
 	 */
 	void loadMap();
 
