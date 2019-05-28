@@ -124,7 +124,8 @@ class DBProperties extends Properties {
 	private static void setGameLevel(int level) {
 		if(level>0 && level<6) {
 			gameLevel=level;	
+		}else {
+			gameLevel=1;
 		}
-
 	}
 }

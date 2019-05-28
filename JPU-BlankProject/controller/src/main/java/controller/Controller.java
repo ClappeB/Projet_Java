@@ -4,6 +4,7 @@ import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
+import entity.Diamond;
 
 /**
  * The Class Controller.
@@ -39,6 +40,10 @@ public final class Controller implements IController {
 	 */
 	public void control() {
 		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
+		this.model.getMap().print();
+		((Diamond)this.model.getMap().getEntity(4, 2)).goDown();
+		System.out.println("-----------------------------------");
+		this.model.getMap().print();
 	}
 
 	/**

@@ -48,7 +48,7 @@ class ViewPanel extends JPanel implements Observer {
 	private void setViewFrame(final ViewFrame viewFrame) {
 		this.viewFrame = viewFrame;
 	}
-
+		
 	/*
 	 * (non-Javadoc)
 	 *

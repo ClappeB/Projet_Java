@@ -11,7 +11,11 @@ public abstract class MobileElements extends Entity {
 	}
 	
 	public void goDown() {
-		this.setPosY(this.getPosY() + 1);
+//		this.setPosY(this.getPosY() + 1);
+//		System.out.println(this);
+//		System.out.println(this.getPosX());
+//		System.out.println(this.getPosY());
+		Map.changeEntityPosition(this, Map.getEntity(this.getPosX(), this.getPosY()+1));
 	}
 	
 	public void goLeft() {
