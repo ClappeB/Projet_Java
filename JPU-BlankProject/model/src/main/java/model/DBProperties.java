@@ -27,7 +27,7 @@ class DBProperties extends Properties {
 	private String							password							= "";
 	
 	/** The level to get from the database*/
-	private int gameLevel = 1;
+	private static int gameLevel = 1;
 	
 	/**
 	 * Instantiates a new DB properties.
@@ -46,7 +46,7 @@ class DBProperties extends Properties {
 			this.setUrl(this.getProperty("url"));
 			this.setLogin(this.getProperty("login"));
 			this.setPassword(this.getProperty("password"));
-			this.setGameLevel(Integer.parseInt(this.getProperty("level")));
+			setGameLevel(Integer.parseInt(this.getProperty("level")));
 		}
 	}
 
@@ -112,8 +112,8 @@ class DBProperties extends Properties {
 	 * 
 	 * @return the game level
 	 */
-	public int getGameLevel() {
-		return this.gameLevel;
+	public static int getGameLevel() {
+		return gameLevel;
 	}
 	
 	/**
@@ -121,9 +121,9 @@ class DBProperties extends Properties {
 	 * 
 	 * @param level
 	 */
-	private void setGameLevel(int level) {
+	private static void setGameLevel(int level) {
 		if(level>0 && level<6) {
-			this.gameLevel=level;	
+			gameLevel=level;	
 		}
 
 	}

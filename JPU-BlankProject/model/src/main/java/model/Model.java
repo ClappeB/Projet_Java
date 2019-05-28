@@ -20,7 +20,7 @@ public final class Model extends Observable implements IModel {
 	 * Instantiates a new model.
 	 */
 	public Model() {
-		
+		this.loadMap();
 	}
 
 
@@ -55,10 +55,10 @@ public final class Model extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage(java.lang.String)
 	 */
-	public void loadMap(final int code) {
+	public void loadMap() {
 		try {
 			final DAOMap daoMap = new DAOMap(DBConnection.getInstance().getConnection());
-			this.setMap(daoMap.find(code));
+			this.setMap(daoMap.find());
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}

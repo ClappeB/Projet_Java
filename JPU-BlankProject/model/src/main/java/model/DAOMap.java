@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import entity.Map;
 
 class DAOMap {
-
+	
 	/** The connection. */
 	private final Connection connection;
 
@@ -40,13 +40,13 @@ class DAOMap {
 	 *          the id
 	 * @return the e
 	 */
-	public Map find(final int id) {
+	public Map find() {
 		String level;
-
+		
 		try {
 			final String sql = "{call level(?)}";
 			final CallableStatement call = this.getConnection().prepareCall(sql);
-			call.setInt(1, id);
+			call.setInt(1, DBProperties.getGameLevel());
 			call.execute();
 			final ResultSet resultSet = call.getResultSet();
 			final int width = resultSet.getInt(1);
