@@ -74,18 +74,17 @@ class ViewPanel extends JPanel implements Observer {
             {
                 for(int x=0; x < this.getViewFrame().getModel().getMap().getWidth(); x++)
                 {
-                    this.getViewFrame().getModel().getMap().getContent()[x][y].getSprite().loadImage();
+                    this.getViewFrame().getModel().getMap().getEntity(x,y).getSprite().loadImage();
                 }
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         for(int y=0; y < this.getViewFrame().getModel().getMap().getHeight(); y++)
         {
             for(int x=0; x < this.getViewFrame().getModel().getMap().getWidth(); x++)
             {
-                graphics.drawImage(this.getViewFrame().getModel().getMap().getContent()[x][y].getSprite().getImage(), x*32, y*32, this);
+                graphics.drawImage(this.getViewFrame().getModel().getMap().getEntity(x,y).getSprite().getImage(), x*16, y*16, this);
             }
         }
 

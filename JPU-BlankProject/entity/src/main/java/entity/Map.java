@@ -60,23 +60,18 @@ public class Map {
 	}
 	
 	private void loadMap(String level) {
-		level.replaceAll("\r\n", "!");
+		level = level.replaceAll("\r\n", "!");
 		int xMap = 0, yMap = 0; //Location in the map
-		
 		for(int i = 0; i<level.length(); i++) {
 			if(level.charAt(i)=='!') {
 				xMap=0;
 				yMap++;
 			}else {
 				this.setEntity(xMap, yMap, Factory.getFromFileSymbol(level.charAt(i)));
+				xMap++;
 			}
 			
 		}
-	}
-
-	public Entity[][] getContent() {
-		// TODO Auto-generated method stub
-		return map;
 	}
 }
 
