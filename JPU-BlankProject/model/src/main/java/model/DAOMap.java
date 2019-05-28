@@ -46,9 +46,10 @@ class DAOMap {
 		try {
 			final String sql = "{call level(?)}";
 			final CallableStatement call = this.getConnection().prepareCall(sql);
-			call.setInt(1, DBProperties.getGameLevel());
+			call.setInt(1, /*DBProperties.getGameLevel()*/1);
 			call.execute();
 			final ResultSet resultSet = call.getResultSet();
+			resultSet.first();
 			final int width = resultSet.getInt(1);
 			final int height = resultSet.getInt(2);
 			level = resultSet.getString(3);

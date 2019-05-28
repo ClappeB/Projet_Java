@@ -3,6 +3,9 @@ package entity;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.imageio.ImageIO;
 
@@ -67,7 +70,7 @@ public class Sprite {
 	 *  		The image to print
 	 */
 	public void setImage(final Image image) {
-		
+		this.image=image;
 	}
 	
 	/**
@@ -75,7 +78,7 @@ public class Sprite {
 	 * @return imageName
 	 */
 	public final String getImageName() {
-		return "";
+		return imageName;
 	}
 	
 	/**
@@ -83,7 +86,7 @@ public class Sprite {
 	 * @param imageName
 	 */
 	public void setImageName(String imageName) {
-		
+		this.imageName=imageName;
 	}
 	
 	/**
@@ -91,7 +94,7 @@ public class Sprite {
 	 * @return consoleImage
 	 */
 	public final char getConsoleImage() {
-		return ' ';
+		return consoleImage;
 	}
 	
 	/**
@@ -99,7 +102,7 @@ public class Sprite {
 	 * @param consoleImage
 	 */
 	public final void setConsoleImage(final char consoleImage) {
-		
+		this.consoleImage=consoleImage;
 	}
 	
 	/**
@@ -107,7 +110,7 @@ public class Sprite {
 	 * @return boolean
 	 */
 	public boolean isImageLoaded() {
-		return true;
+		return this.imageLoaded;
 	}
 	
 	/**
@@ -115,7 +118,7 @@ public class Sprite {
 	 * @param isImageLoaded
 	 */
 	public void setImageLoaded(final boolean isImageLoaded) {
-		
+		this.imageLoaded=isImageLoaded;
 	}
 	
 	/**
@@ -123,7 +126,7 @@ public class Sprite {
 	 * @throws IOException 
 	 */
 	public void loadImage() throws IOException {
-		this.setImage(ImageIO.read(new File("..\\image jeu\\" + this.getImageName())));
+		this.setImage(ImageIO.read(new File("..\\Image jeu\\" + this.getImageName())));
 	}
 	
 }
