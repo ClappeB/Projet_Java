@@ -132,6 +132,19 @@ public class Map extends Observable{
 		return entities;
 		
 	}
-
+	
+	public void replaceEntityByBackgroundDirtOrDiamond(Entity entityToReplace, String newBlock) {
+		Entity newEntity;
+		if(newBlock.equals("Diamond")) {
+			newEntity = Factory.createDiamond();
+		}else {
+			newEntity = Factory.createBackgroundDirt();
+		}
+		this.setEntity(entityToReplace.getPosX(), entityToReplace.getPosY(), newEntity);
+		newEntity.setPosX(entityToReplace.getPosX());
+		newEntity.setPosY(entityToReplace.getPosY());
+		this.entities.remove(entityToReplace);
+		this.entities.add(newEntity);
+	}
 
 }

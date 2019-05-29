@@ -1,6 +1,6 @@
 package entity;
 
-public class Diamond extends Gravity implements IKill{
+public class Diamond extends Gravity {
 	
 	private static Sprite SPRITE = new Sprite('D', "diamond.png");
 	
@@ -8,7 +8,4 @@ public class Diamond extends Gravity implements IKill{
 		super(SPRITE, Permeability.UNBLOCKING);
 	}
 	
-	public void kill(Killable killable) {
-		killable.setIsAlive(false);
-	}
 }

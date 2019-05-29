@@ -1,6 +1,6 @@
 package entity;
 
-public class Rock extends Gravity implements IKill{
+public class Rock extends Gravity {
 
 		private static Sprite SPRITE = new Sprite('R', "rock.png");
 	
@@ -24,7 +24,4 @@ public class Rock extends Gravity implements IKill{
 			return false;
 		}
 		
-		public void kill(Killable killable) {
-			killable.setIsAlive(false);
-		}
 }

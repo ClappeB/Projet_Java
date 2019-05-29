@@ -8,8 +8,25 @@ public class Monster extends Killable implements IKill{
 		super(sprite, Permeability.UNBLOCKING);
 	}
 	
-	public void diamondExplosion() {
+	public void diamondExplosion(Map map) {
+		int refPosX = this.getPosX(), refPosY = this.getPosY();
+		Entity[] squareAroundEntity = {
+				map.getEntity(refPosX, refPosY), //Center
+				map.getEntity(refPosX-1, refPosY-1), //LeftUp
+				map.getEntity(refPosX, refPosY-1), //Up
+				map.getEntity(refPosX+1, refPosY-1), //RightUp
+				map.getEntity(refPosX+1, refPosY), //Right
+				map.getEntity(refPosX+1, refPosY+1), //DownRight
+				map.getEntity(refPosX, refPosY+1), //Down
+				map.getEntity(refPosX-1, refPosY+1), //DownLeft
+				map.getEntity(refPosX-1, refPosY)  //Left
+			};
 		
+		for (Entity entity : squareAroundEntity) {
+			if(entity instanceof BackgroundDirt || entity instanceof Monster) {
+				map.replaceEntityByBackgroundDirtOrDiamond(entity, "Diamond");
+			}
+		}
 	}
 	
 	public void kill(Killable killable) {
@@ -48,5 +65,11 @@ public class Monster extends Killable implements IKill{
 		this.goDown(map);
 		this.goRight(map);
 		this.goUp(map);
+	}
+	
+	public void kill(Map map, Killable killable) {
+		if(killable instanceof Player) {
+			map.replaceEntityByBackgroundDirtOrDiamond(killable, "Dirt");
+		}
 	}
 }

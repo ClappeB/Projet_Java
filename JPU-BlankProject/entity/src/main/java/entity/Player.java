@@ -100,12 +100,7 @@ public class Player extends Killable {
 	}
 	
 	private void dig(Map map, Entity blockToDig) {
-		Entity newEntity = Factory.createBackgroundDirt();
-		map.setEntity(blockToDig.getPosX(), blockToDig.getPosY(), newEntity);
-		newEntity.setPosX(blockToDig.getPosX());
-		newEntity.setPosY(blockToDig.getPosY());
-		map.getEntityList().remove(blockToDig);
-		map.getEntityList().add(newEntity);
+		map.replaceEntityByBackgroundDirtOrDiamond(blockToDig, "Dirt");
 	}
 	
 }

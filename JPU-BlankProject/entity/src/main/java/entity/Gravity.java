@@ -1,7 +1,9 @@
 package entity;
 
-public abstract class Gravity extends MobileElements {
-
+public abstract class Gravity extends MobileElements implements IKill {
+	
+		private boolean isFalling;
+	
 		Gravity(Sprite sprite, Permeability permeability) {
 			super(sprite, permeability);
 		}
@@ -16,15 +18,49 @@ public abstract class Gravity extends MobileElements {
 			
 			if(blockUnder instanceof BackgroundDirt) {
 				this.goDown(map);
-			} else if(blockUnder instanceof Killable) {
-				((Killable) blockUnder).setIsAlive(false);
-			} else if((blockUnder instanceof Rock || blockUnder instanceof UnbreakableBlock) && blockLeft instanceof BackgroundDirt && blockLeftDown instanceof BackgroundDirt){
-				this.goLeft(map);
-				this.goDown(map);
-			} else if((blockUnder instanceof Rock || blockUnder instanceof UnbreakableBlock) && blockRight instanceof BackgroundDirt && blockRightDown instanceof BackgroundDirt) {
-				this.goRight(map);
-				this.goDown(map);
+				this.isFalling=true;
+			} else if(blockUnder instanceof Killable && this.isFalling==true) {
+				this.kill(map, (Killable)blockUnder);
+			} else if((blockUnder instanceof Rock || blockUnder instanceof UnbreakableBlock || blockUnder instanceof Diamond )){
+				if(blockLeft instanceof BackgroundDirt) {
+					if(blockLeftDown instanceof BackgroundDirt) {
+						this.goLeft(map);
+						this.goDown(map);
+						this.isFalling=true;
+					}
+					
+					if(blockLeftDown instanceof Killable) {
+						this.goLeft(map);
+						this.goDown(map);
+						this.kill(map, (Killable)blockLeftDown);
+					}
+				}
+				
+				if(blockRight instanceof BackgroundDirt) {
+					
+					if(blockRightDown instanceof BackgroundDirt) {
+						this.goRight(map);
+						this.goDown(map);
+						this.isFalling=true;
+					}
+					
+					if(blockRightDown instanceof Killable) {
+						this.goRight(map);
+						this.goDown(map);
+						this.kill(map, (Killable)blockRightDown);
+					}
+				}
+			} else {
+				this.isFalling=false;
 			}
 			
+		}
+		
+		public void kill(Map map, Killable killable) {
+			if(killable instanceof Monster) {
+				((Monster) killable).diamondExplosion(map);
+			} else {
+				killable.setIsAlive(false);
+			}
 		}
 }
