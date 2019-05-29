@@ -11,10 +11,10 @@ public abstract class Gravity extends MobileElements {
 				this.goDown();
 			} else if(blockUnder instanceof Killable) {
 				((Killable) blockUnder).setIsAlive(false);
-			} else if(blockUnder instanceof Rock || blockUnder instanceof UnbreakableBlock && blockLeft instanceof BackgroundDirt && blockLeftDown instanceof BackgroundDirt){
+			} else if((blockUnder instanceof Rock || blockUnder instanceof UnbreakableBlock) && blockLeft instanceof BackgroundDirt && blockLeftDown instanceof BackgroundDirt){
 				this.goLeft();
 				this.goDown();
-			} else if(blockRight instanceof BackgroundDirt && blockRightDown instanceof BackgroundDirt) {
+			} else if((blockUnder instanceof Rock || blockUnder instanceof UnbreakableBlock) && blockRight instanceof BackgroundDirt && blockRightDown instanceof BackgroundDirt) {
 				this.goRight();
 				this.goDown();
 			}

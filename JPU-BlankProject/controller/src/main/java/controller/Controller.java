@@ -60,13 +60,14 @@ public final class Controller implements IController {
 				}
 			}
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 		System.out.println("-----------------------------------");
 		this.model.getMap().print();
+		this.view.printMessage("GAME OVER");
 	}
 
 	/**
