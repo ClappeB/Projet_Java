@@ -66,6 +66,8 @@ public final class Controller implements IController {
 					this.view.printMessage("Vous avez gagné ! BRAVO !");
 				}
 			}
+			((Player)Factory.createPlayer()).checkMonster(this.model.getMap());
+			
 			
 			temporizer=0;
 			}
