@@ -2,8 +2,14 @@ package entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class Map {
+public class Map extends Observable{
+	
+
 	
 	/** The height and width of the map*/
 	private int height, width;
@@ -20,7 +26,18 @@ public class Map {
 	 * @param width
 	 * @param height
 	 */
+	
+	TimerTask action = new TimerTask() {
+        public void run() {
+            update();
+        }
+    };
+    Timer timer;
+	
 	public Map(int width, int height, String level){
+		
+		timer = new Timer();
+		timer.schedule(action, 250);
 		this.width=width;
 		this.height=height;
 		map = new Entity[width][height];
@@ -83,13 +100,11 @@ public class Map {
 		}
 	}
 	
-	public void refresh() {
+	public void print() {
+		
 		for(int i = 0; i<entities.size();i++) {
 			setEntity(entities.get(i).getPosX(), entities.get(i).getPosY(), entities.get(i));
 		}
-	}
-	
-	public void print() {
 		
 		for(int y = 0; y<this.height;y++) {
 			for(int x = 0; x<this.width;x++) {
@@ -107,6 +122,11 @@ public class Map {
 		firstEntity.setPosY(secondEntity.getPosY());
 		secondEntity.setPosX(tempPosX);
 		secondEntity.setPosY(tempPosY);
+	}
+
+	public void update() {
+		setChanged();
+		notifyObservers();
 	}
 }
 
