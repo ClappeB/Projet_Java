@@ -4,7 +4,10 @@ import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
-import entity.Diamond;
+import entity.Entity;
+import entity.Factory;
+import entity.Gravity;
+import entity.Player;
 
 /**
  * The Class Controller.
@@ -39,9 +42,29 @@ public final class Controller implements IController {
 	 * @see contract.IController#control()
 	 */
 	public void control() {
-		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
+		Entity entityWorking;
+		//this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
 		this.model.getMap().print();
-		((Diamond)this.model.getMap().getEntity(4, 2)).goDown();
+		while(((Player)Factory.createPlayer()).isAlive()) {
+			for(int y = this.model.getMap().getHeight() - 1; y > 0 ; y--) {
+				for(int x = 0; x < this.model.getMap().getWidth(); x++) {
+					entityWorking = this.model.getMap().getEntity(x, y);
+					if(entityWorking instanceof Gravity) {
+						((Gravity)entityWorking).fall(this.model.getMap().getEntity(x, y + 1),
+								this.model.getMap().getEntity(x - 1, y),
+								this.model.getMap().getEntity(x - 1, y + 1),
+								this.model.getMap().getEntity(x + 1, y),
+								this.model.getMap().getEntity(x + 1, y + 1));
+						this.model.getMap().refresh();
+					}
+				}
+			}
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		System.out.println("-----------------------------------");
 		this.model.getMap().print();
 	}
