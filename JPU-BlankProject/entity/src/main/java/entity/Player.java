@@ -24,7 +24,7 @@ public class Player extends Killable {
 	
 	public void checkMonster(Map map) {
 		int refPosX = this.getPosX(), refPosY = this.getPosY();
-		Entity blockUp = map.getEntity(this.getPosX(), this.getPosY()-1);
+		Entity blockUp = map.getEntity(refPosX, refPosY-1);
 		Entity blockLeft = map.getEntity(refPosX-1, refPosY);
 		Entity blockRight = map.getEntity(refPosX+1, refPosY);
 		Entity blockDown = map.getEntity(refPosX, refPosY+1);
