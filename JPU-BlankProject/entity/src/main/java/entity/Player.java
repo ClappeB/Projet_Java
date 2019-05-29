@@ -22,7 +22,12 @@ public class Player extends Killable {
 		this.diamondNumber = diamondNumber;
 	}
 	
-	public void checkMonster(Entity blockUp, Entity blockLeft, Entity blockRight, Entity blockDown) {
+	public void checkMonster(Map map) {
+		int refPosX = this.getPosX(), refPosY = this.getPosY();
+		Entity blockUp = map.getEntity(this.getPosX(), this.getPosY()-1);
+		Entity blockLeft = map.getEntity(refPosX-1, refPosY);
+		Entity blockRight = map.getEntity(refPosX+1, refPosY);
+		Entity blockDown = map.getEntity(refPosX, refPosY+1);
 		if(blockUp instanceof Monster || blockLeft instanceof Monster || blockRight instanceof Monster || blockDown instanceof Monster) {
 			this.setIsAlive(false);
 		}
@@ -31,9 +36,9 @@ public class Player extends Killable {
 	public void goUp(Map map) {
 		Entity blockUp = map.getEntity(this.getPosX(), this.getPosY()-1);
 		if(blockUp instanceof BackgroundDirt) {
-			this.goUp(map);
+			super.goUp(map);
 		} else if(blockUp instanceof Dirt) {
-			this.goUp(map);
+			super.goUp(map);
 			blockUp.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
@@ -41,9 +46,9 @@ public class Player extends Killable {
 	public void goDown(Map map) {
 		Entity blockDown = map.getEntity(this.getPosX(), this.getPosY()+1);
 		if(blockDown instanceof BackgroundDirt) {
-			this.goDown(map);
+			super.goDown(map);
 		} else if(blockDown instanceof Dirt) {
-			this.goDown(map);
+			super.goDown(map);
 			blockDown.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
@@ -51,9 +56,9 @@ public class Player extends Killable {
 	public void goLeft(Map map) {
 		Entity blockLeft = map.getEntity(this.getPosX()-1, this.getPosY());
 		if(blockLeft instanceof BackgroundDirt) {
-			this.goLeft(map);
+			super.goLeft(map);
 		} else if(blockLeft instanceof Dirt) {
-			this.goLeft(map);
+			super.goLeft(map);
 			blockLeft.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
@@ -61,10 +66,10 @@ public class Player extends Killable {
 	public void goRight(Map map) {
 		Entity blockRight = map.getEntity(this.getPosX()+1, this.getPosY());
 		if(blockRight instanceof BackgroundDirt) {
-			this.goRight(map);
+			super.goRight(map);
 		} else if(blockRight instanceof Dirt) {
-			this.goRight(map);
-			blockRight.setSprite(new Sprite('B', "backgroundDirt"));
+			super.goRight(map);
+//			blockRight.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
 }
