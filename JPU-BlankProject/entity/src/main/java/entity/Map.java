@@ -29,7 +29,7 @@ public class Map extends Observable{
 	
 	TimerTask action = new TimerTask() {
         public void run() {
-            update();
+            refresh();
         }
     };
     Timer timer;
@@ -105,6 +105,8 @@ public class Map extends Observable{
 		for(int i = 0; i<entities.size();i++) {
 			setEntity(entities.get(i).getPosX(), entities.get(i).getPosY(), entities.get(i));
 		}
+		this.setChanged();
+		this.notifyObservers();
 	}
 	
 	public void print() {
@@ -126,9 +128,5 @@ public class Map extends Observable{
 		secondEntity.setPosY(tempPosY);
 	}
 
-	public void update() {
-		refresh();
-		setChanged();
-		notifyObservers();
-	}
+
 }
