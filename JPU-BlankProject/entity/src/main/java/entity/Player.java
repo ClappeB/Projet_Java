@@ -44,7 +44,7 @@ public class Player extends Killable {
 			this.dig(map, blockUp);
 			super.goUp(map);
 			this.setDiamondNumber(getDiamondNumber()+1);
-		} 
+		}
 	}
 		
 	public void goDown(Map map) {

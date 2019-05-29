@@ -25,19 +25,9 @@ public class Map extends Observable{
 	 * 
 	 * @param width
 	 * @param height
-	 */
-	
-	TimerTask action = new TimerTask() {
-        public void run() {
-            refresh();
-        }
-    };
-    Timer timer;
-	
+	 */	
 	public Map(int width, int height, String level){
 		
-		timer = new Timer();
-		timer.schedule(action, 250);
 		this.width=width;
 		this.height=height;
 		map = new Entity[width][height];
