@@ -15,7 +15,7 @@ public class Map extends Observable{
 	private int height, width;
 	
 	/** The map */
-	private static Entity[][] map;
+	private Entity[][] map;
 	
 	/** List of entities */
 	private List<Entity> entities = new ArrayList<Entity>();
@@ -62,7 +62,7 @@ public class Map extends Observable{
 	 * @param y
 	 * @return Entity
 	 */
-	public static Entity getEntity(int x, int y) {
+	public Entity getEntity(int x, int y) {
 		return map[x][y];
 	}
 	
@@ -118,7 +118,7 @@ public class Map extends Observable{
 		}
 	}
 	
-	public static void changeEntityPosition(Entity firstEntity, Entity secondEntity) {
+	public void changeEntityPosition(Entity firstEntity, Entity secondEntity) {
 		int tempPosX, tempPosY;
 		tempPosX=firstEntity.getPosX();
 		tempPosY=firstEntity.getPosY();

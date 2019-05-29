@@ -28,39 +28,43 @@ public class Player extends Killable {
 		}
 	}
 	
-	public void goUp(Entity blockUp) {
+	public void goUp(Map map) {
+		Entity blockUp = map.getEntity(this.getPosX(), this.getPosY()-1);
 		if(blockUp instanceof BackgroundDirt) {
-			this.goUp();
+			this.goUp(map);
 		} else if(blockUp instanceof Dirt) {
-			this.goUp();
-			blockUp.setSprite(new Sprite('B', "BackgroundDirt"));
+			this.goUp(map);
+			blockUp.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
 		
-	public void goDown(Entity blockDown) {
+	public void goDown(Map map) {
+		Entity blockDown = map.getEntity(this.getPosX(), this.getPosY()+1);
 		if(blockDown instanceof BackgroundDirt) {
-			this.goDown();
+			this.goDown(map);
 		} else if(blockDown instanceof Dirt) {
-			this.goDown();
-			blockDown.setSprite(new Sprite('B', "BackgroundDirt"));
+			this.goDown(map);
+			blockDown.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
 		
-	public void goLeft(Entity blockLeft) {
+	public void goLeft(Map map) {
+		Entity blockLeft = map.getEntity(this.getPosX()-1, this.getPosY());
 		if(blockLeft instanceof BackgroundDirt) {
-			this.goLeft();
+			this.goLeft(map);
 		} else if(blockLeft instanceof Dirt) {
-			this.goLeft();
-			blockLeft.setSprite(new Sprite('B', "BackgroundDirt"));
+			this.goLeft(map);
+			blockLeft.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
 		
-	public void goRight(Entity blockRight) {
+	public void goRight(Map map) {
+		Entity blockRight = map.getEntity(this.getPosX()+1, this.getPosY());
 		if(blockRight instanceof BackgroundDirt) {
-			this.goRight();
+			this.goRight(map);
 		} else if(blockRight instanceof Dirt) {
-			this.goRight();
-			blockRight.setSprite(new Sprite('B', "BackgroundDirt"));
+			this.goRight(map);
+			blockRight.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
 }
