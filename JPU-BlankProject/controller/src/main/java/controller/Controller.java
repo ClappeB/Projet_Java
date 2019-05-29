@@ -8,6 +8,7 @@ import entity.Entity;
 import entity.Exit;
 import entity.Factory;
 import entity.Gravity;
+import entity.Monster;
 import entity.Permeability;
 import entity.Player;
 
@@ -55,6 +56,9 @@ public final class Controller implements IController {
 					entityWorking = this.model.getMap().getEntity(x, y);
 					if(entityWorking instanceof Gravity) {
 						((Gravity)entityWorking).fall(this.model.getMap());
+					}
+					if(entityWorking instanceof Monster) {
+						((Monster)entityWorking).mouvement1(this.model.getMap());
 					}
 				}
 				
