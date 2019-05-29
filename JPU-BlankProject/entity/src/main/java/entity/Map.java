@@ -127,6 +127,7 @@ public class Map extends Observable{
 	}
 
 	public void update() {
+		refresh();
 		setChanged();
 		notifyObservers();
 	}
