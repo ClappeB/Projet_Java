@@ -100,15 +100,17 @@ public class Map extends Observable{
 		}
 	}
 	
-	public void print() {
+	public void refresh() {
 		
 		for(int i = 0; i<entities.size();i++) {
 			setEntity(entities.get(i).getPosX(), entities.get(i).getPosY(), entities.get(i));
 		}
-		
+	}
+	
+	public void print() {
 		for(int y = 0; y<this.height;y++) {
 			for(int x = 0; x<this.width;x++) {
-				System.out.print(this.getEntity(x, y).getSprite().getConsoleImage());
+				System.out.print(getEntity(x, y).getSprite().getConsoleImage());
 			}
 			System.out.println();
 		}
@@ -129,4 +131,3 @@ public class Map extends Observable{
 		notifyObservers();
 	}
 }
-
