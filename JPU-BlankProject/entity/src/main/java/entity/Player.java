@@ -40,6 +40,10 @@ public class Player extends Killable {
 		} else if(blockUp instanceof Dirt) {
 			this.dig(map, blockUp);
 			super.goUp(map);
+		} else if(blockUp instanceof Dirt) {
+			this.dig(map, blockUp);
+			super.goUp(map);
+			this.setDiamondNumber(getDiamondNumber()+1);
 		}
 	}
 		
@@ -50,6 +54,10 @@ public class Player extends Killable {
 		} else if(blockDown instanceof Dirt) {
 			this.dig(map, blockDown);
 			super.goDown(map);
+		} else if(blockDown instanceof Dirt) {
+			this.dig(map, blockDown);
+			super.goDown(map);
+			this.setDiamondNumber(getDiamondNumber()+1);
 		}
 	}
 		
@@ -60,6 +68,10 @@ public class Player extends Killable {
 		} else if(blockLeft instanceof Dirt) {
 			this.dig(map, blockLeft);
 			super.goLeft(map);
+		} else if(blockLeft instanceof Diamond) {
+			this.dig(map, blockLeft);
+			super.goLeft(map);
+			this.setDiamondNumber(getDiamondNumber()+1);
 		}
 	}
 		
@@ -70,6 +82,10 @@ public class Player extends Killable {
 		} else if(blockRight instanceof Dirt) {
 			this.dig(map, blockRight);
 			super.goRight(map);
+		} else if(blockRight instanceof Diamond) {
+			this.dig(map, blockRight);
+			super.goRight(map);
+			this.setDiamondNumber(getDiamondNumber()+1);
 		}
 	}
 	

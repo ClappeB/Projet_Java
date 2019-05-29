@@ -61,6 +61,7 @@ public final class Controller implements IController {
 				e.printStackTrace();
 			}
 		}
+		System.out.println("You got "+((Player)Factory.createPlayer()).getDiamondNumber()+" diamond(s)");
 		System.out.println("-----------------------------------");
 		this.model.getMap().print();
 		this.view.printMessage("GAME OVER");
