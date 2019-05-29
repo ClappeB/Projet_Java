@@ -83,11 +83,13 @@ public class Map {
 		}
 	}
 	
-	public void print() {
-		
+	public void refresh() {
 		for(int i = 0; i<entities.size();i++) {
 			setEntity(entities.get(i).getPosX(), entities.get(i).getPosY(), entities.get(i));
 		}
+	}
+	
+	public void print() {
 		
 		for(int y = 0; y<this.height;y++) {
 			for(int x = 0; x<this.width;x++) {
