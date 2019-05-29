@@ -43,20 +43,25 @@ public final class Controller implements IController {
 	 */
 	public void control() {
 		Entity entityWorking;
+		int temporizer = 0;
 		//this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
 		this.model.getMap().print();
 		while(((Player)Factory.createPlayer()).isAlive()) {
+			if(temporizer==10) {
 			for(int y = this.model.getMap().getHeight() - 1; y > 0 ; y--) {
 				for(int x = 0; x < this.model.getMap().getWidth(); x++) {
 					entityWorking = this.model.getMap().getEntity(x, y);
 					if(entityWorking instanceof Gravity) {
 						((Gravity)entityWorking).fall(this.model.getMap());
-						this.model.getMap().refresh();
 					}
 				}
 			}
+			temporizer=0;
+			}
+			temporizer++;
+			this.model.getMap().refresh();
 			try {
-				Thread.sleep(500);
+				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
