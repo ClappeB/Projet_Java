@@ -5,8 +5,10 @@ import contract.IController;
 import contract.IModel;
 import contract.IView;
 import entity.Entity;
+import entity.Exit;
 import entity.Factory;
 import entity.Gravity;
+import entity.Permeability;
 import entity.Player;
 
 /**
@@ -55,7 +57,16 @@ public final class Controller implements IController {
 						((Gravity)entityWorking).fall(this.model.getMap());
 					}
 				}
+				
 			}
+			((Exit)Factory.createExit()).diamondCheck(((Player)Factory.createPlayer()).getDiamondNumber());
+			Entity blockDown = this.model.getMap().getEntity(((Player)Factory.createPlayer()).getPosX(),((Player)Factory.createPlayer()).getPosY() + 1);
+			if(blockDown instanceof Exit) {
+				if(((Exit)Factory.createExit()).getPermeability() == Permeability.UNBLOCKING) {
+					this.view.printMessage("Vous avez gagné ! BRAVO !");
+				}
+			}
+			
 			temporizer=0;
 			}
 			temporizer++;
@@ -70,7 +81,8 @@ public final class Controller implements IController {
 		System.out.println("-----------------------------------");
 		this.model.getMap().print();
 		this.view.printMessage("GAME OVER");
-	}
+	
+}
 
 	/**
      * Sets the view.
