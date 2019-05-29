@@ -9,6 +9,7 @@ package entity;
 public enum Permeability {
 	
 	BLOCKING,
-	UNBLOCKING
+	UNBLOCKING,
+	NON_INTERACTING
 	
 }
