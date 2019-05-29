@@ -103,21 +103,25 @@ public final class Controller implements IController {
 	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		switch (controllerOrder) {
-			case English:
+			case z:
+				((Player)Factory.createPlayer()).goUp();
 //				this.model.loadHelloWorld("GB");
 				break;
-			case Francais:
+			case s:
+				((Player)Factory.createPlayer()).goDown();
 //				this.model.loadHelloWorld("FR");
 				break;
-			case Deutsch:
+			case q:
+				((Player)Factory.createPlayer()).goLeft();
 //				this.model.loadHelloWorld("DE");
 				break;
-			case Indonesia:
+			case d:
+				((Player)Factory.createPlayer()).goRight();
 //				this.model.loadHelloWorld("ID");
 				break;
 			default:
 				break;
-				
+			
 			
 		}
 	}
