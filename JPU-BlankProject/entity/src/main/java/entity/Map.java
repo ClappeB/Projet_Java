@@ -127,6 +127,11 @@ public class Map extends Observable{
 		secondEntity.setPosX(tempPosX);
 		secondEntity.setPosY(tempPosY);
 	}
+	
+	public List<Entity> getEntityList() {
+		return entities;
+		
+	}
 
 
 }

@@ -38,6 +38,7 @@ public class Player extends Killable {
 		if(blockUp instanceof BackgroundDirt) {
 			super.goUp(map);
 		} else if(blockUp instanceof Dirt) {
+			this.dig(map, blockUp);
 			super.goUp(map);
 		}
 	}
@@ -47,6 +48,7 @@ public class Player extends Killable {
 		if(blockDown instanceof BackgroundDirt) {
 			super.goDown(map);
 		} else if(blockDown instanceof Dirt) {
+			this.dig(map, blockDown);
 			super.goDown(map);
 		}
 	}
@@ -56,6 +58,7 @@ public class Player extends Killable {
 		if(blockLeft instanceof BackgroundDirt) {
 			super.goLeft(map);
 		} else if(blockLeft instanceof Dirt) {
+			this.dig(map, blockLeft);
 			super.goLeft(map);
 		}
 	}
@@ -65,7 +68,17 @@ public class Player extends Killable {
 		if(blockRight instanceof BackgroundDirt) {
 			super.goRight(map);
 		} else if(blockRight instanceof Dirt) {
+			this.dig(map, blockRight);
 			super.goRight(map);
 		}
+	}
+	
+	private void dig(Map map, Entity blockToDig) {
+		Entity newEntity = Factory.createBackgroundDirt();
+		map.setEntity(blockToDig.getPosX(), blockToDig.getPosY(), newEntity);
+		newEntity.setPosX(blockToDig.getPosX());
+		newEntity.setPosY(blockToDig.getPosY());
+		map.getEntityList().remove(blockToDig);
+		map.getEntityList().add(newEntity);
 	}
 }
