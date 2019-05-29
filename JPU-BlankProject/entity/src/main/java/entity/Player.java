@@ -39,7 +39,6 @@ public class Player extends Killable {
 			super.goUp(map);
 		} else if(blockUp instanceof Dirt) {
 			super.goUp(map);
-			blockUp.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
 		
@@ -49,7 +48,6 @@ public class Player extends Killable {
 			super.goDown(map);
 		} else if(blockDown instanceof Dirt) {
 			super.goDown(map);
-			blockDown.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
 		
@@ -59,7 +57,6 @@ public class Player extends Killable {
 			super.goLeft(map);
 		} else if(blockLeft instanceof Dirt) {
 			super.goLeft(map);
-			blockLeft.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
 		
@@ -69,7 +66,6 @@ public class Player extends Killable {
 			super.goRight(map);
 		} else if(blockRight instanceof Dirt) {
 			super.goRight(map);
-//			blockRight.setSprite(new Sprite('B', "backgroundDirt"));
 		}
 	}
 }
