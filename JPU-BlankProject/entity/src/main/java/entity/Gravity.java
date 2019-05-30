@@ -34,9 +34,7 @@ public abstract class Gravity extends MobileElements implements IKill {
 						this.goDown(map);
 						this.kill(map, (Killable)blockLeftDown);
 					}
-				}
-				
-				if(blockRight instanceof BackgroundDirt) {
+				} else if(blockRight instanceof BackgroundDirt) {
 					
 					if(blockRightDown instanceof BackgroundDirt) {
 						this.goRight(map);
@@ -49,6 +47,8 @@ public abstract class Gravity extends MobileElements implements IKill {
 						this.goDown(map);
 						this.kill(map, (Killable)blockRightDown);
 					}
+				} else {
+					this.isFalling=false;
 				}
 			} else {
 				this.isFalling=false;
