@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -20,10 +19,6 @@ public class DBPropertiesTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		dbProperties = new DBProperties();
-	}
-
-	@Before
-	public void setUp() throws Exception {
 	}
 
 	@Test
@@ -80,7 +75,7 @@ public class DBPropertiesTest {
 		} catch (IOException e) {}
 		
 		int level = Integer.parseInt(props.getProperty("level"));
-		assertEquals(level, dbProperties.getGameLevel());
+		assertEquals(level, DBProperties.getGameLevel());
 	}
 
 }

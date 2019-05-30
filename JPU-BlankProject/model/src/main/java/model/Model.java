@@ -13,7 +13,7 @@ import entity.Map;
  */
 public final class Model extends Observable implements IModel {
 
-	/** The helloWorld. */
+	/** The game's map */
 	private Map map;
 
 	/**
@@ -22,7 +22,6 @@ public final class Model extends Observable implements IModel {
 	public Model() {
 		this.loadMap();
 	}
-
 
 	/**
 	 * Get the map
