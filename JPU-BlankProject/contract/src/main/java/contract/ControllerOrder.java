@@ -14,5 +14,7 @@ public enum ControllerOrder {
 	/** Go left. */
 	q,
 	/** Go right. */
-	d
+	d,
+	/** Don't move. */
+	noMove
 }

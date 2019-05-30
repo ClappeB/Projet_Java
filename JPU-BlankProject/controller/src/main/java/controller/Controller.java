@@ -22,6 +22,8 @@ public final class Controller implements IController {
 	/** The model. */
 	private IModel	model;
 
+	private ControllerOrder playerOrder;
+	
 	/**
 	 * Instantiates a new controller.
 	 *
@@ -45,10 +47,9 @@ public final class Controller implements IController {
 	 */
 	public void control() {
 		Entity entityWorking;
-		int temporizer = 0;
-
+		playerOrder = ControllerOrder.noMove;
+		
 		while(((Player)Factory.createPlayer()).isAlive() && !((Exit)Factory.createExit()).getExitReached()) {
-			if(temporizer==10) {
 				for(int y = this.model.getMap().getHeight() - 1; y > 0 ; y--) {
 					for(int x = 0; x < this.model.getMap().getWidth(); x++) {
 						entityWorking = this.model.getMap().getEntity(x, y);
@@ -67,13 +68,31 @@ public final class Controller implements IController {
 				}
 			
 				((Player)Factory.createPlayer()).checkMonster(this.model.getMap());
-				temporizer=0;
+				
+				switch(playerOrder) {
+				case z:
+					((Player)Factory.createPlayer()).goUp(this.model.getMap());
+					playerOrder=ControllerOrder.noMove;
+					break;
+				case s:
+					((Player)Factory.createPlayer()).goDown(this.model.getMap());
+					playerOrder=ControllerOrder.noMove;
+					break;
+				case q:
+					((Player)Factory.createPlayer()).goLeft(this.model.getMap());
+					playerOrder=ControllerOrder.noMove;
+					break;
+				case d:
+					((Player)Factory.createPlayer()).goRight(this.model.getMap());
+					playerOrder=ControllerOrder.noMove;
+					break;
+				default:
+					break;
 			}
 			
-			temporizer++;
 			this.model.getMap().refresh();
 			try {
-				Thread.sleep(50);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -122,20 +141,16 @@ public final class Controller implements IController {
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		switch (controllerOrder) {
 			case z:
-				((Player)Factory.createPlayer()).goUp(this.model.getMap());
-//				this.model.loadHelloWorld("GB");
+				playerOrder=ControllerOrder.z;
 				break;
 			case s:
-				((Player)Factory.createPlayer()).goDown(this.model.getMap());
-//				this.model.loadHelloWorld("FR");
+				playerOrder=ControllerOrder.s;
 				break;
 			case q:
-				((Player)Factory.createPlayer()).goLeft(this.model.getMap());
-//				this.model.loadHelloWorld("DE");
+				playerOrder=ControllerOrder.q;
 				break;
 			case d:
-				((Player)Factory.createPlayer()).goRight(this.model.getMap());
-//				this.model.loadHelloWorld("ID");
+				playerOrder=ControllerOrder.d;
 				break;
 			default:
 				break;
