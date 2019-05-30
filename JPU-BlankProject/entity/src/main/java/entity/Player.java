@@ -24,11 +24,8 @@ public class Player extends Killable {
 	
 	public void checkMonster(Map map) {
 		int refPosX = this.getPosX(), refPosY = this.getPosY();
-		Entity blockUp = map.getEntity(refPosX, refPosY-1);
-		Entity blockLeft = map.getEntity(refPosX-1, refPosY);
-		Entity blockRight = map.getEntity(refPosX+1, refPosY);
-		Entity blockDown = map.getEntity(refPosX, refPosY+1);
-		if(blockUp instanceof Monster || blockLeft instanceof Monster || blockRight instanceof Monster || blockDown instanceof Monster) {
+		if(map.getEntity(refPosX, refPosY-1) instanceof Monster || map.getEntity(refPosX-1, refPosY) instanceof Monster 
+		   || map.getEntity(refPosX+1, refPosY) instanceof Monster || map.getEntity(refPosX, refPosY+1) instanceof Monster) {
 			this.setIsAlive(false);
 		}
 	}

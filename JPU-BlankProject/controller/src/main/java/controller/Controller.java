@@ -9,7 +9,6 @@ import entity.Exit;
 import entity.Factory;
 import entity.Gravity;
 import entity.Monster;
-import entity.Permeability;
 import entity.Player;
 
 /**
@@ -47,34 +46,30 @@ public final class Controller implements IController {
 	public void control() {
 		Entity entityWorking;
 		int temporizer = 0;
-		//this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
-		this.model.getMap().print();
-		while(((Player)Factory.createPlayer()).isAlive()) {
+
+		while(((Player)Factory.createPlayer()).isAlive() && !((Exit)Factory.createExit()).getExitReached()) {
 			if(temporizer==10) {
-			for(int y = this.model.getMap().getHeight() - 1; y > 0 ; y--) {
-				for(int x = 0; x < this.model.getMap().getWidth(); x++) {
-					entityWorking = this.model.getMap().getEntity(x, y);
-					if(entityWorking instanceof Gravity) {
-						((Gravity)entityWorking).fall(this.model.getMap());
+				for(int y = this.model.getMap().getHeight() - 1; y > 0 ; y--) {
+					for(int x = 0; x < this.model.getMap().getWidth(); x++) {
+						entityWorking = this.model.getMap().getEntity(x, y);
+						if(entityWorking instanceof Gravity) {
+							((Gravity)entityWorking).fall(this.model.getMap());
+						}
+						if(entityWorking instanceof Monster) {
+							((Monster)entityWorking).mouvement1(this.model.getMap());
+						}
 					}
-					if(entityWorking instanceof Monster) {
-						((Monster)entityWorking).mouvement1(this.model.getMap());
-					}
+				
 				}
 				
-			}
-			((Exit)Factory.createExit()).diamondCheck(((Player)Factory.createPlayer()).getDiamondNumber());
-			Entity blockDown = this.model.getMap().getEntity(((Player)Factory.createPlayer()).getPosX(),((Player)Factory.createPlayer()).getPosY() + 1);
-			if(blockDown instanceof Exit) {
-				if(((Exit)Factory.createExit()).getPermeability() == Permeability.UNBLOCKING) {
-					this.view.printMessage("Vous avez gagné ! BRAVO !");
+				if(((Exit)Factory.createExit()).diamondCheck(((Player)Factory.createPlayer()).getDiamondNumber())) {
+					((Exit)Factory.createExit()).playerCheck(this.model.getMap());
 				}
-			}
-			((Player)Factory.createPlayer()).checkMonster(this.model.getMap());
 			
-			
-			temporizer=0;
+				((Player)Factory.createPlayer()).checkMonster(this.model.getMap());
+				temporizer=0;
 			}
+			
 			temporizer++;
 			this.model.getMap().refresh();
 			try {
@@ -83,12 +78,15 @@ public final class Controller implements IController {
 				e.printStackTrace();
 			}
 		}
+		
+		if(((Exit)Factory.createExit()).getExitReached()) {
+			this.view.printMessage("Vous avez gagné ! BRAVO !");
+		} else {
+			this.view.printMessage("GAME OVER");
+		}
 		System.out.println("You got "+((Player)Factory.createPlayer()).getDiamondNumber()+" diamond(s)");
-		System.out.println("-----------------------------------");
-		this.model.getMap().print();
-		this.view.printMessage("GAME OVER");
 	
-}
+	}
 
 	/**
      * Sets the view.
