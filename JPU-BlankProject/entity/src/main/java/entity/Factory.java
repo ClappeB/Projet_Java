@@ -34,7 +34,7 @@ public abstract class Factory {
 			exit = new Exit();
 		}
 		return exit;
-	}
+	} 
 	
 	public static Entity createDirt() {
 		return new Dirt();

@@ -38,7 +38,7 @@ public abstract class Monster extends Killable implements IKill{
 		Entity blockUp = map.getEntity(this.getPosX(), this.getPosY()-1);
 		if(blockUp instanceof BackgroundDirt) {
 			super.goUp(map);
-		}
+		} 
 	}
 		
 	public void goDown(Map map) {

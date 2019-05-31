@@ -6,7 +6,7 @@ public class Bat extends Monster {
 	
 	Bat() {
 		super(sprite, Permeability.UNBLOCKING);
-	}
+	} 
 	
 	public void behaviour(Map map) {
 		int random = (int)(Math.random() * 5);

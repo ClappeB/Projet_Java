@@ -58,7 +58,7 @@ public final class Controller implements IController {
 						}
 						if(entityWorking instanceof Monster) {
 							((Monster)entityWorking).behaviour(this.model.getMap());
-						}
+						} 
 					}
 				
 				}

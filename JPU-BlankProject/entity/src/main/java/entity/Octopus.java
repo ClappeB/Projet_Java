@@ -6,7 +6,7 @@ public class Octopus extends Monster {
 	
 	Octopus() {
 		super(sprite, Permeability.UNBLOCKING);
-	}
+	} 
 	
 	public void behaviour(Map map) {
 		Entity blockRight = map.getEntity(this.getPosX() + 1, this.getPosY());
