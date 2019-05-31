@@ -38,7 +38,7 @@ public class Map extends Observable{
 	 * @param y
 	 * @param e
 	 */
-	public void setEntity(int x, int y, Entity e) {
+	private void setEntity(int x, int y, Entity e) {
 		map[x][y]=e;
 	}
 	
@@ -117,7 +117,6 @@ public class Map extends Observable{
 	
 	public List<Entity> getEntityList() {
 		return entities;
-		
 	}
 	
 	public void replaceEntityByBackgroundDirtOrDiamond(Entity entityToReplace, String newBlock) {

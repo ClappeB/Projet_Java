@@ -8,7 +8,7 @@ public class Rock extends Gravity {
 			super(SPRITE, Permeability.BLOCKING);
 		}
 		
-		public boolean pushedLeft(Map map) {
+		boolean pushedLeft(Map map) {
 			if(map.getEntity(this.getPosX()-1, this.getPosY()) instanceof BackgroundDirt) {
 				this.goLeft(map);
 				return true;
@@ -16,7 +16,7 @@ public class Rock extends Gravity {
 			return false;
 		}
 		
-		public boolean pushedRight(Map map) {
+		boolean pushedRight(Map map) {
 			if(map.getEntity(this.getPosX()+1, this.getPosY()) instanceof BackgroundDirt) {
 				this.goRight(map);
 				return true;
