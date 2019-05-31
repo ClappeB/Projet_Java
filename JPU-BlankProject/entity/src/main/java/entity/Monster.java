@@ -8,7 +8,7 @@ public abstract class Monster extends Killable implements IKill{
 		super(sprite, permeability);
 	}
 	
-	public void diamondExplosion(Map map) {
+	void diamondExplosion(Map map) {
 		int refPosX = this.getPosX(), refPosY = this.getPosY();
 		Entity[] squareAroundEntity = {
 				map.getEntity(refPosX, refPosY), //Center
@@ -29,11 +29,6 @@ public abstract class Monster extends Killable implements IKill{
 		}
 	}
 	
-	public void kill(Killable killable) {
-		if(killable instanceof Player) {
-			killable.setIsAlive(false);
-		}
-	}
 	public void goUp(Map map) {
 		Entity blockUp = map.getEntity(this.getPosX(), this.getPosY()-1);
 		if(blockUp instanceof BackgroundDirt) {
@@ -61,7 +56,6 @@ public abstract class Monster extends Killable implements IKill{
 	}	
 	
 	public void behaviour(Map map) {
-		
 	}
 	
 	public void kill(Map map, Killable killable) {
