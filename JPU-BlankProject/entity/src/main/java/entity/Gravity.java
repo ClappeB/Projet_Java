@@ -21,6 +21,7 @@ public abstract class Gravity extends MobileElements implements IKill {
 				this.isFalling=true;
 			} else if(blockUnder instanceof Killable && this.isFalling==true) {
 				this.kill(map, (Killable)blockUnder);
+				this.goDown(map);
 			} else if((blockUnder instanceof Rock || blockUnder instanceof UnbreakableBlock || blockUnder instanceof Diamond )){
 				if(blockLeft instanceof BackgroundDirt) {
 					if(blockLeftDown instanceof BackgroundDirt) {
