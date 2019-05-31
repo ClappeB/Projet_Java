@@ -10,7 +10,7 @@ public class Player extends Killable {
 		super(sprite, permeability);
 	}
 	
-	public Player(Sprite sprite) {
+	Player(Sprite sprite) {
 		super(sprite, permeability);
 	}
 
