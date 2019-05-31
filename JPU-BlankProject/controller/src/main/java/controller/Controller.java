@@ -57,7 +57,7 @@ public final class Controller implements IController {
 							((Gravity)entityWorking).fall(this.model.getMap());
 						}
 						if(entityWorking instanceof Monster) {
-							((Monster)entityWorking).mouvement1(this.model.getMap());
+							((Monster)entityWorking).behaviour(this.model.getMap());
 						}
 					}
 				
@@ -92,7 +92,7 @@ public final class Controller implements IController {
 			
 			this.model.getMap().refresh();
 			try {
-				Thread.sleep(500);
+				Thread.sleep(200);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

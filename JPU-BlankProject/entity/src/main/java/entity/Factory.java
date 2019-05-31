@@ -13,8 +13,12 @@ public abstract class Factory {
 		return new Rock();
 	}
 	
-	public static Entity createMonster() {
-		return new Monster();
+	public static Entity createBat() {
+		return new Bat();
+	}
+	
+	public static Entity createOctopus() {
+		return new Octopus();
 	}
 	
 	public static Entity createPlayer() {
@@ -56,8 +60,10 @@ public abstract class Factory {
 				return createBackgroundDirt();
 			case 'D':
 				return createDiamond();
-			case 'M':
-				return createMonster();
+			case 'C':
+				return createBat();
+			case 'O':
+				return createOctopus();
 			case 'P':
 				return createPlayer();
 			case 'E':

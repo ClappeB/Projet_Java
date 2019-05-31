@@ -1,11 +1,11 @@
 package entity;
 
-public class Monster extends Killable implements IKill{
+public abstract class Monster extends Killable implements IKill{
 	
-	private static Sprite sprite = new Sprite('M', "bat.png");
+	protected boolean goLeft = true;
 	
-	Monster() {
-		super(sprite, Permeability.UNBLOCKING);
+	Monster(Sprite sprite, Permeability permeability) {
+		super(sprite, permeability);
 	}
 	
 	public void diamondExplosion(Map map) {
@@ -58,13 +58,10 @@ public class Monster extends Killable implements IKill{
 		if(blockRight instanceof BackgroundDirt) {
 			super.goRight(map);
 		}
-	}
+	}	
 	
-	public void mouvement1(Map map) {
-		this.goLeft(map);
-		this.goDown(map);
-		this.goRight(map);
-		this.goUp(map);
+	public void behaviour(Map map) {
+		
 	}
 	
 	public void kill(Map map, Killable killable) {
