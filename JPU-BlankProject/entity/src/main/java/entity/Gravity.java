@@ -60,6 +60,7 @@ public abstract class Gravity extends MobileElements implements IKill {
 			if(killable instanceof Monster) {
 				((Monster) killable).diamondExplosion(map);
 			} else {
+				map.replaceEntityByBackgroundDirtOrDiamond(killable, "Dirt");
 				killable.setIsAlive(false);
 			}
 		}
