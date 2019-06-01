@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class DBConnectionTest {
 	
-	DBConnection dbConnection = DBConnection.getInstance();
+	private DBConnection dbConnection = DBConnection.getInstance();
 	
 	@Test
 	public void testGetInstance() {
