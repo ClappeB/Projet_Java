@@ -22,8 +22,9 @@ public abstract class Monster extends Killable implements IKill{
 				map.getEntity(refPosX-1, refPosY)  //Left
 			};
 		
+		map.replaceEntityByBackgroundDirtOrDiamond(this, "Diamond");
 		for (Entity entity : squareAroundEntity) {
-			if(entity instanceof BackgroundDirt || entity instanceof Monster) {
+			if(entity instanceof BackgroundDirt) {
 				map.replaceEntityByBackgroundDirtOrDiamond(entity, "Diamond");
 			}
 		}
