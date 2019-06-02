@@ -8,10 +8,6 @@ public class Player extends Killable {
 	Player() {
 		super(sprite, Permeability.UNBLOCKING);
 	}
-	
-	Player(Sprite sprite) {
-		super(sprite, Permeability.UNBLOCKING);
-	}
 
 	public int getDiamondNumber() {
 		return diamondNumber;
