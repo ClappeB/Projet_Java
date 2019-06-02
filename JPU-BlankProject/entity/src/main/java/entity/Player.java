@@ -4,14 +4,13 @@ public class Player extends Killable {
 	
 	private int diamondNumber=0;
 	private static Sprite sprite = new Sprite('P', "face1.png");
-	private static final Permeability permeability = Permeability.UNBLOCKING;
 	
 	Player() {
-		super(sprite, permeability);
+		super(sprite, Permeability.UNBLOCKING);
 	}
 	
 	Player(Sprite sprite) {
-		super(sprite, permeability);
+		super(sprite, Permeability.UNBLOCKING);
 	}
 
 	public int getDiamondNumber() {
