@@ -60,7 +60,6 @@ public final class Controller implements IController {
 							((Monster)entityWorking).behaviour(this.model.getMap());
 						} 
 					}
-				
 				}
 				
 				if(((Exit)Factory.createExit()).diamondCheck(((Player)Factory.createPlayer()).getDiamondNumber())) {
@@ -154,9 +153,10 @@ public final class Controller implements IController {
 				break;
 			default:
 				break;
-			
-			
 		}
 	}
-
+	
+	public ControllerOrder getOrderPerform() {
+		return this.playerOrder;
+	}
 }
