@@ -20,19 +20,10 @@ import entity.Map;
 
 public class ControllerTest {
 
-	private static Controller controller;
-	private static FakeModel model;
-	private static FakeView view;
+	private Controller controller;
+	private FakeModel model;
+	private FakeView view;
 	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
 	@Before
 	public void setUp() throws Exception {
 		view = new FakeView(new FakeModel());
@@ -40,19 +31,10 @@ public class ControllerTest {
 		controller = new Controller(view, model);
 	}
 
-	@After
-	public void tearDown() throws Exception {
-		
-	}
 	
 	@Test
 	public void testController() {
 		assertNotNull("The controller shouldn't be null",controller);
-	}
-
-	@Test
-	public void testControl() {
-		fail("Not yet implemented");
 	}
 	
 	@Test
