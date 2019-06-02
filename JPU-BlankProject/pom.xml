@@ -10,6 +10,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+	
 	<modules>
 		<module>view</module>
 		<module>main</module>
@@ -124,7 +126,9 @@
 				<reportSets>
 					<reportSet>
 						<id>aggregate</id>
+						
 						<reports>
+						
 							<report>aggregate</report>
 							<report>test-aggregate</report>
 						</reports>
@@ -146,7 +150,7 @@
   <distributionManagement>
     <site>
       <id>www.yourcompany.com</id>
-      <url>scp://www.yourcompany.com/www/docs/project/</url>
+      <url>scp://github.com/ClappeB/Projet_Java/tree/master/JPU-BlankProject</url>
     </site>
   </distributionManagement>
 </project>

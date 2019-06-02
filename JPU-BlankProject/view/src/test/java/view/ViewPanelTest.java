@@ -40,7 +40,7 @@ public class ViewPanelTest {
 
     @Test
     public void testPaintComponentGraphics() {
-//    	assertTrue("Should return a sprite.", getImage. );
+   	//assertTrue("Should return a sprite.", IOException());
     }
 
 }

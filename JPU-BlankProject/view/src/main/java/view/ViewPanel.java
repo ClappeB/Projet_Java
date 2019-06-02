@@ -26,9 +26,9 @@ class ViewPanel extends JPanel implements Observer {
 	 *          the view frame
 	 */
 	public ViewPanel(final ViewFrame viewFrame) {
-		this.setViewFrame(viewFrame);
-		viewFrame.getModel().getObservable().addObserver(this);
-	}
+        this.setViewFrame(viewFrame);
+        viewFrame.getModel().getMap().addObserver(this);
+    }
 
 	/**
 	 * Gets the view frame.
@@ -66,9 +66,6 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 	   protected void paintComponent(final Graphics graphics) {
         graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
-
-        //        graphics.drawString(this.getViewFrame().getModel().getHelloWorld().getMessage(), 10, 20);
-        //        graphics.drawString(this.getViewFrame().getModel().getHelloWorld().getMessage(), 25, 40);
         try {
             for(int y=0; y < this.getViewFrame().getModel().getMap().getHeight(); y++)
             {
@@ -87,6 +84,7 @@ class ViewPanel extends JPanel implements Observer {
                 graphics.drawImage(this.getViewFrame().getModel().getMap().getEntity(x,y).getSprite().getImage(), x*32, y*32, this);
             }
         }
-        viewFrame.getModel().getMap().addObserver(this);
+      
 	}
+	
 }
