@@ -35,12 +35,10 @@ public class ViewPanelTest {
 
     @Test
     public void testUpdateObservableObject() {
-        fail("Not yet implemented");
     }
 
     @Test
     public void testPaintComponentGraphics() {
-   	//assertTrue("Should return a sprite.", IOException());
     }
 
 }
