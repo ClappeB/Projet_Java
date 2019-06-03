@@ -1,5 +1,5 @@
 package entity;
-/** Dirt thta the player dig */
+/** Dirt dig by the player  */
 public class Dirt extends MotionLessElements {
 	/** Sprite */
 	private static final Sprite SPRITE = new Sprite('.', "dirt.png");
