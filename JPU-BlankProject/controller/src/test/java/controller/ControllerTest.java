@@ -16,7 +16,7 @@ import contract.IView;
 import entity.Map;
 
 public class ControllerTest {
-	/** a Controler*/
+	/** a Controler */
 	private Controller controller;
 	/** a Fake model */
 	private FakeModel model;
