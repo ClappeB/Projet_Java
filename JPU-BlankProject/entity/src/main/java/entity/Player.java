@@ -7,20 +7,34 @@ public class Player extends Killable {
 	private int diamondNumber=0;
 	/** Sprite  */
 	private static Sprite sprite = new Sprite('P', "face1.png");
-	/** Sprite */
+	/** Instantiate a new Player */
 	Player() {
 		super(sprite, Permeability.UNBLOCKING);
 	}
 
-	/** Get a diamond */
+	/** Get the number of diamonds earned 
+	 * 
+	 * @return int
+	 * 			The number of diamonds
+	 * 
+	 */
 	public int getDiamondNumber() {
 		return diamondNumber;
 	}
-	/** Set diamond number */
+	/** Set diamond number 
+	 * 
+	 * @param int
+	 * 			the player's diamond number
+	 */
 	public void setDiamondNumber(int diamondNumber) {
 		this.diamondNumber = diamondNumber;
 	}
-	/** Check if there is a monster beside*/
+	/** Check if there is a monster beside
+	 * 
+	 * @param Map
+	 * 			The map
+	 * 
+	 */
 	public void checkMonster(Map map) {
 		int refPosX = this.getPosX(), refPosY = this.getPosY();
 		if(map.getEntity(refPosX, refPosY-1) instanceof Monster || map.getEntity(refPosX-1, refPosY) instanceof Monster 
@@ -28,7 +42,12 @@ public class Player extends Killable {
 			this.setIsAlive(false);
 		}
 	}
-	/** Go up and dig*/
+	/** Go up and dig
+	 * 
+	 * @param Map
+	 * 			The map
+	 * 
+	 */
 	public void goUp(Map map) {
 		Entity blockUp = map.getEntity(this.getPosX(), this.getPosY()-1);
 		if(blockUp instanceof BackgroundDirt) {
@@ -42,7 +61,12 @@ public class Player extends Killable {
 			this.setDiamondNumber(getDiamondNumber()+1);
 		}
 	}
-	/** Go down and dig */
+	/** Go down and dig 
+	 * 
+	 * @param Map
+	 * 			The map
+	 * 
+	 */
 	public void goDown(Map map) {
 		Entity blockDown = map.getEntity(this.getPosX(), this.getPosY()+1);
 		if(blockDown instanceof BackgroundDirt) {
@@ -56,7 +80,12 @@ public class Player extends Killable {
 			this.setDiamondNumber(getDiamondNumber()+1);
 		} 
 	}
-	/** Go left and dig */
+	/** Go left and dig 
+	 * 
+	 * @param Map
+	 * 			The map
+	 * 
+	 */
 	public void goLeft(Map map) {
 		Entity blockLeft = map.getEntity(this.getPosX()-1, this.getPosY());
 		if(blockLeft instanceof BackgroundDirt) {
@@ -75,7 +104,12 @@ public class Player extends Killable {
 			}
 		}
 	}
-	/** Go right and dig */
+	/** Go right and dig 
+	 * 
+	 * @param Map
+	 * 			The map
+	 * 
+	 */
 	public void goRight(Map map) {
 		Entity blockRight = map.getEntity(this.getPosX()+1, this.getPosY());
 		if(blockRight instanceof BackgroundDirt) {
@@ -94,7 +128,14 @@ public class Player extends Killable {
 			}
 		}
 	}
-	/** Dig the dirt */
+	/** Dig the dirt 
+	 * 
+	 * @param Map
+	 * 			The map
+	 * @param Entity
+	 * 			The entity to dig
+	 * 
+	 */
 	private void dig(Map map, Entity blockToDig) {
 		map.replaceEntityByBackgroundDirtOrDiamond(blockToDig, "Dirt");
 	}

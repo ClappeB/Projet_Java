@@ -5,11 +5,15 @@ package entity;
 public class Octopus extends Monster {
 	/** Sprite */
 	private static Sprite sprite = new Sprite('O', "octopus.png");
-	/** Sprite  */
+	/** Instantiate a new Octopus  */
 	Octopus() {
 		super(sprite, Permeability.UNBLOCKING);
 	} 
-	/** Monster movement */
+	/** Monster movement 
+	 * 
+	 * @param Map
+	 * 			The map
+	 */
 	public void behaviour(Map map) {
 		Entity blockRight = map.getEntity(this.getPosX() + 1, this.getPosY());
 		Entity blockLeft = map.getEntity(this.getPosX() - 1, this.getPosY());

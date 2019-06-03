@@ -7,7 +7,7 @@ public class UnbreakableBlock extends MotionLessElements {
 	/** Sprite */
 	private static final Sprite SPRITE = new Sprite('U', "unbreakableBlock.png");
 	
-	/** Sprite */
+	/** Instantiate a new UnbreakableBlock */
 	UnbreakableBlock() {
 		super(SPRITE, Permeability.BLOCKING);
 	}
