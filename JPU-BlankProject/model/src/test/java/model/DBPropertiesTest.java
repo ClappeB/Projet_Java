@@ -1,5 +1,5 @@
 package model;
-
+/** DB properties Test. */
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
@@ -15,17 +15,19 @@ import org.junit.Test;
 public class DBPropertiesTest {
 	
 	private static DBProperties dbProperties;
-	
+	/** New DB Properties. */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		dbProperties = new DBProperties();
 	}
 
+	/** Test DBproperties instance and existence. */
 	@Test
 	public void testDBProperties() {
 		assertNotNull("DBProperties should be instantiated and not null", dbProperties);
 	}
 
+	/** Test the url getting. */
 	@Test
 	public void testGetUrl() {		
 		Properties props = new Properties();
@@ -39,6 +41,7 @@ public class DBPropertiesTest {
 		assertEquals(url, dbProperties.getUrl());
 	}
 
+	/** Test the login. */
 	@Test
 	public void testGetLogin() {
 		Properties props = new Properties();
@@ -52,6 +55,7 @@ public class DBPropertiesTest {
 		assertEquals(login, dbProperties.getLogin());
 	}
 
+	/** Test the password confirmation. */
 	@Test
 	public void testGetPassword() {		
 		Properties props = new Properties();
@@ -65,6 +69,7 @@ public class DBPropertiesTest {
 		assertEquals(password, dbProperties.getPassword());
 	}
 
+	/**Test the game loading. */
 	@Test
 	public void testGetGameLevel() {
 		Properties props = new Properties();
