@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class GravityTest {
 
-	private static Gravity gravity;
+	private static Gravity gravity; 
 	private static Map mapBefore, mapAfter;
 	private static String descriptionOfMap, descriptionOfMap2;
 	

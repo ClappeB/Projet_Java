@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class KillableTest {
 
-	private Killable killable;
+	private Killable killable; 
 	
 	@Before
 	public void setUp() throws Exception {
