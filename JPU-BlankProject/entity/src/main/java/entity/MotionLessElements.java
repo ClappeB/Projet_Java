@@ -4,7 +4,7 @@ package entity;
  */
 public abstract class MotionLessElements extends Entity {
 
-	/** Sprite */
+	/** Sprite  */
 	MotionLessElements(Sprite sprite, Permeability permeability) {
 		super(sprite, permeability);
 	}

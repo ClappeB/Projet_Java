@@ -5,7 +5,7 @@ package entity;
 public class Player extends Killable {
 	/** Diamond number at the start */
 	private int diamondNumber=0;
-	/** Sprite */
+	/** Sprite  */
 	private static Sprite sprite = new Sprite('P', "face1.png");
 	/** Sprite */
 	Player() {

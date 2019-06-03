@@ -3,7 +3,7 @@ package entity;
  * The Class Monster
  */
 public abstract class Monster extends Killable implements IKill{
-	/** Monster go left */
+	/** Monster go left  */
 	protected boolean goLeft = true;
 	
 	/** Sprite */

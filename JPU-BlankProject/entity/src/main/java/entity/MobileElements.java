@@ -4,7 +4,7 @@ package entity;
  */
 public abstract class MobileElements extends Entity {
 	
-	/** Sprite */
+	/** Sprite  */
 	MobileElements(Sprite sprite, Permeability permeability) {
 		super(sprite, permeability);
 	}

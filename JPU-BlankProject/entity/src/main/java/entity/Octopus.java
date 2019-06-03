@@ -5,7 +5,7 @@ package entity;
 public class Octopus extends Monster {
 	/** Sprite */
 	private static Sprite sprite = new Sprite('O', "octopus.png");
-	/** Sprite */
+	/** Sprite  */
 	Octopus() {
 		super(sprite, Permeability.UNBLOCKING);
 	} 

@@ -1,7 +1,7 @@
 package entity;
 
 /**
- * The enum Permeability
+ *  The enum Permeability
  * 
  * 
  */
