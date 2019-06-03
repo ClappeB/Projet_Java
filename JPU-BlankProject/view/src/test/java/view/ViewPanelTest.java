@@ -13,10 +13,13 @@ import contract.IModel;
 import entity.Map;
 
 public class ViewPanelTest {
-	/** a IModel */
+	/** an IModel */
     private static IModel model;
 
-    /** New fakeModel */
+    /** New fakeModel 
+     * @throws Exception
+     * 			the exception
+     */
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         model = new fakeModel();
@@ -33,7 +36,9 @@ public class ViewPanelTest {
 }
 
 class fakeModel implements IModel {
-	/** Get a map */
+	/** Get a map 
+	 * @return Map
+	 */
     @Override
     public Map getMap() {
         return new Map(3,3,"BBB!BBB!BBB");
@@ -43,7 +48,9 @@ class fakeModel implements IModel {
     public void loadMap() {
 
     }
-    /** Get an Observable*/
+    /** Get an Observable
+     * @return Observable 
+     */
     @Override
     public Observable getObservable() {
         return new Observable();
