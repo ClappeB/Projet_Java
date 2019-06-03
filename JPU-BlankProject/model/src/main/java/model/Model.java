@@ -9,7 +9,7 @@ import entity.Map;
 /**
  * The Class Model.
  *
- * @author Jean-Aymeric Diet, Bruno Clappe
+ * 
  */
 public final class Model extends Observable implements IModel {
 
@@ -44,7 +44,7 @@ public final class Model extends Observable implements IModel {
 	}
 
 	/**
-     * Load hello world.
+     * Load Map.
      *
      * @param code
      *            the code

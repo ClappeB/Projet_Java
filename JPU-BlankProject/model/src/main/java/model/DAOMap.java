@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import entity.Map;
-
+/** Map storage. */
 class DAOMap {
 	
 	/** The connection. */
@@ -34,7 +34,7 @@ class DAOMap {
 	}
 	
 	/**
-	 * Find
+	 * Map Finding.
 	 *
 	 * @param id
 	 *          the id
