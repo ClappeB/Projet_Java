@@ -1,5 +1,7 @@
 package entity;
-
+/** 
+ * The Class Map.
+ */
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -78,7 +80,7 @@ public class Map extends Observable{
 	public int getWidth() {
 		return width;
 	}
-	
+	/** Load the level's map */
 	private void loadMap(String level) {
 		level = level.replaceAll("\r\n", "!");
 		int xMap = 0, yMap = 0; //Location in the map
@@ -96,7 +98,7 @@ public class Map extends Observable{
 			
 		}
 	}
-	
+	/** Refresh map's entities */
 	public void refresh() {
 		
 		for(int i = 0; i<entities.size();i++) {
@@ -105,7 +107,7 @@ public class Map extends Observable{
 		this.setChanged();
 		this.notifyObservers();
 	}
-	
+	/** Display the map */
 	public void print() {
 		for(int y = 0; y<this.height;y++) {
 			for(int x = 0; x<this.width;x++) {
@@ -114,7 +116,7 @@ public class Map extends Observable{
 			System.out.println();
 		}
 	}
-	
+	/** Change the entities position */
 	public void changeEntityPosition(Entity firstEntity, Entity secondEntity) {
 		int tempPosX, tempPosY;
 		tempPosX=firstEntity.getPosX();
@@ -124,11 +126,11 @@ public class Map extends Observable{
 		secondEntity.setPosX(tempPosX);
 		secondEntity.setPosY(tempPosY);
 	}
-	
+	/** Entities list on the map */
 	public List<Entity> getEntityList() {
 		return entities;
 	}
-	
+	/** Entity replacement */
 	public void replaceEntityByBackgroundDirtOrDiamond(Entity entityToReplace, String newBlock) {
 		Entity newEntity;
 		if(newBlock.equals("Diamond")) {

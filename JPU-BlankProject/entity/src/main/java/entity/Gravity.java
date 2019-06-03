@@ -2,12 +2,15 @@ package entity;
 
 public abstract class Gravity extends MobileElements implements IKill {
 	
+		/** Object's status*/
 		private boolean isFalling;
 	
+		/** Sprite */
 		Gravity(Sprite sprite, Permeability permeability) {
 			super(sprite, permeability);
 		}
 		
+		/** Falling comportements */
 		public void fall(Map map) {
 			int refPosX = this.getPosX(), refPosY = this.getPosY();
 			Entity blockUnder = map.getEntity(refPosX, refPosY+1);
@@ -56,7 +59,7 @@ public abstract class Gravity extends MobileElements implements IKill {
 			}
 			
 		}
-		
+		/** Can kill killable */
 		public void kill(Map map, Killable killable) {
 			if(killable instanceof Monster) {
 				((Monster) killable).diamondExplosion(map);
