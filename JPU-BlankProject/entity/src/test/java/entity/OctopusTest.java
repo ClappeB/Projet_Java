@@ -1,5 +1,7 @@
 package entity;
-
+/**
+ * Octopus Test
+ */
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -7,20 +9,20 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class OctopusTest {
-
+	/** A Map */
 	private static Map map;
+	/** An octopus */
 	private static Octopus octopus;
 	
+	/**New octopus and new map */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		octopus = new Octopus();
 		map = new Map(3,3,"BBB!BOB!BBB");
 	}
 
-	@Before
-	public void setUp() throws Exception {
-	}
-
+	
+	/** Movement test */
 	@Test
 	public void testBehaviour() {
 		String descriptionOfMap="", descriptionOfMapAfterRefresh="";
@@ -38,12 +40,12 @@ public class OctopusTest {
 		}
 		assertFalse("Monster should move.", descriptionOfMap.equals(descriptionOfMapAfterRefresh));
 	}
-
+	/** Constructor test */
 	@Test
 	public void testOctopus() {
 		assertNotNull("Constructor should instantiate a Octopus.", octopus);
 	}
-
+	/** Sprite test */
 	@Test
 	public void testBatSprite() {
 		assertTrue("Octopus sprite should be octopus.png.", octopus.getSprite().getImageName().equals("octopus.png"));
