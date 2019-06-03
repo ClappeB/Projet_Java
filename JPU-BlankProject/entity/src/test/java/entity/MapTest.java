@@ -1,5 +1,7 @@
 package entity;
-
+/**
+ * Map Test
+ */
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -15,49 +17,55 @@ import org.junit.Test;
 import entity.exceptions.OutOfMapException;
 
 public class MapTest {
-
+	/** a Map */
 	private static Map map;
+	/** Map's attribute*/
 	private static int width, height;
 	
+	/** Set the map's atribute */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		width = 3;
 		height = 3;
 	}
 
+	/** New Map */
 	@Before
 	public void setUp() throws Exception {
 		map = new Map(width, height,".BB!BRB!BBB");
 	}
-
+	
+	/** Test map existence */
 	@Test
 	public void testMap() {
 		assertNotNull("Should instantiate a Map.", map);
 	}
 
+	/** Test entity presence */
 	@Test
 	public void testGetEntity() {
 		assertTrue("Should return an entity.", map.getEntity(0, 0) instanceof Entity);
 		assertTrue("Should return the right entity.", map.getEntity(0, 0) instanceof Dirt);
 	}
 	
+	/** Out of the map exception */
 	@Test(expected = OutOfMapException.class)
 	public void testGetEntityOutOfTheMap() {
 		map.getEntity(-50, 0);
 		map.getEntity(0,890);
 		fail("Map should return an exception when trying to getting an entity out of the map.");
 	}
-
+	/** Test the get of the Height */
 	@Test
 	public void testGetHeight() {
 		assertEquals("Should return the right value of the map's height.", height, map.getHeight());
 	}
-
+	/** Test the get of the width */
 	@Test
 	public void testGetWidth() {
 		assertEquals("Should return the right value of the map's height.", height, map.getWidth());
 	}
-
+	/** Test the map refresh */
 	@Test
 	public void testRefresh() {
 		String descriptionOfMap="", descriptionOfMapAfterRefresh="";
@@ -75,7 +83,7 @@ public class MapTest {
 		}
 		assertFalse("Refresh method should refresh the map and move entities on it.", descriptionOfMap.equals(descriptionOfMapAfterRefresh));
 	}
-
+	/** Test the entity changement of position*/
 	@Test
 	public void testChangeEntityPosition() {
 		String descriptionOfMap="", descriptionOfMapAfterRefresh="";
@@ -93,12 +101,12 @@ public class MapTest {
 		}
 		assertFalse("Should change the entity positions on the map.", descriptionOfMap.equals(descriptionOfMapAfterRefresh));
 	}
-
+	/** Test the get of the list of entities on the map */
 	@Test
 	public void testGetEntityList() {
 		assertTrue("Should return a list.", map.getEntityList() instanceof List);
 	}
-
+	/** Test the replacement of the BackGroundDirt by Diamond */
 	@Test
 	public void testReplaceEntityByBackgroundDirtOrDiamond() {
 		map.replaceEntityByBackgroundDirtOrDiamond(map.getEntity(0, 0), "Diamond");

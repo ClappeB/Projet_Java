@@ -1,5 +1,7 @@
 package entity;
-
+/**
+ * MobileElements test 
+ */
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
@@ -9,16 +11,20 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class MobileElementsTest {
-
+	/** A map */
 	private static Map map;
+	/** An object who can move */
 	private static MobileElements mobileElements;
+	/** Variable for comparaison */
 	private String descriptionOfMap, descriptionOfMapAfterRefresh;
 	
+	/** New rock */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		mobileElements = new Rock();
 	}
 
+	/** New map and reset of the description*/
 	@Before
 	public void setUp() throws Exception {
 		map = new Map(3,3,"BBB!BOB!BBB");
@@ -26,11 +32,13 @@ public class MobileElementsTest {
 		descriptionOfMapAfterRefresh="";
 	}
 
+	/** Constructor Test */
 	@Test
 	public void testMobileElements() {
 		assertNotNull("Constructor should instantiate a mobile element.", mobileElements);
 	}
-
+	
+	/** Movement test Go Up */
 	@Test
 	public void testGoUp() {
 		for(int x = 0; x<map.getWidth(); x++) {
@@ -47,7 +55,7 @@ public class MobileElementsTest {
 		}
 		assertFalse("Should make the mobile element going up on the map.", descriptionOfMap.equals(descriptionOfMapAfterRefresh));
 	}
-
+	/** Movement test Go Down*/
 	@Test
 	public void testGoDown() {
 		for(int x = 0; x<map.getWidth(); x++) {
@@ -64,7 +72,7 @@ public class MobileElementsTest {
 		}
 		assertFalse("Should make the mobile element going down on the map.", descriptionOfMap.equals(descriptionOfMapAfterRefresh));
 	}
-
+	/** Movement test Go Left */
 	@Test
 	public void testGoLeft() {
 		for(int x = 0; x<map.getWidth(); x++) {
@@ -81,7 +89,7 @@ public class MobileElementsTest {
 		}
 		assertFalse("Should make the mobile element going left on the map.", descriptionOfMap.equals(descriptionOfMapAfterRefresh));
 	}
-
+	/** Movement test Go Right*/
 	@Test
 	public void testGoRight() {
 		for(int x = 0; x<map.getWidth(); x++) {
