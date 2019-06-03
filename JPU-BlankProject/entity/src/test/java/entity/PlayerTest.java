@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -31,7 +30,17 @@ public class PlayerTest {
 	public void testPlayer() {
 		assertNotNull("Constructor should instantiate a Player.", player);
 	}
-
+	
+	@Test
+	public void testPlayerSprite() {
+		assertTrue("Player sprite should be face1.png.", player.getSprite().getImageName().equals("face1.png"));
+	}
+	/** Permeability test */
+	@Test
+	public void testPlayerPermeability() {
+		assertTrue("Player permeability should be unblocking.", player.getPermeability()==Permeability.UNBLOCKING);
+	}
+	
 	@Test
 	public void testGetDiamondNumber() {
 		assertEquals("Should return the right number of diamonds.", 0, player.getDiamondNumber());
