@@ -1,13 +1,14 @@
 package entity;
-
+/** Monster bat */
 public class Bat extends Monster {
-
+	
+	/** Sprite */
 	private static Sprite sprite = new Sprite('C',"bat.png");
 	
 	Bat() {
 		super(sprite, Permeability.UNBLOCKING);
 	} 
-	
+	/** Bat's movement */ 
 	public void behaviour(Map map) {
 		int random = (int)(Math.random() * 4)+1;
 		
