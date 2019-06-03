@@ -19,39 +19,52 @@ public abstract class Entity {
 	private int posY;
 	/**
 	 * Entity constructor
-	 *  
+	 *  @param Sprite @param permeability
 	 */
 	Entity(Sprite sprite, Permeability permeability) {
 		this.setSprite(sprite);
 		this.setPermeability(permeability);
 	}
 
-	/** Get gprite */
+	/** Get sprite
+	 * @return sprite
+	*/
 	public Sprite getSprite() {
 		return sprite;
 	}
 
-	/** Set sprite */
+	/** Set sprite 
+	 *@param Sprite 
+	 */
 	public void setSprite(Sprite sprite) {
 		this.sprite = sprite;
 	}
 
-	/** Get permeability */
+	/** Get permeability 
+	 *@return permeability 
+	 */
 	public Permeability getPermeability() {
 		return permeability;
 	}
 
-	/** Set permeability */
+	/** Set permeability 
+	 * @param permeability
+	 */
 	public void setPermeability(Permeability permeability) {
 		this.permeability = permeability;
 	}
 
-	/** Horizontal position */
+	/** Horizontal position
+	 *@return posX 
+	 */
 	public int getPosX() {
 		return posX;
 	}
 	
-	/** Set horizontal position */
+	/** Set horizontal position
+	 * 
+	 *@param posX  
+	 */
 	public void setPosX(int posX) {
 		if(posX<0) {
 			throw new WrongCoordinates("Coordinates can't be negative.");
@@ -60,12 +73,16 @@ public abstract class Entity {
 		}
 	}
 
-	/** Vertical position */
+	/** Vertical position 
+	 *@return posY 
+	 */
 	public  int getPosY() {
 		return posY;
 	}
 
-	/** Set vertical postion */
+	/** Set vertical postion 
+	 * @param posY
+	  */
 	public void setPosY(int posY) {
 		if(posY<0) {
 			throw new WrongCoordinates("Coordinates can't be negative.");

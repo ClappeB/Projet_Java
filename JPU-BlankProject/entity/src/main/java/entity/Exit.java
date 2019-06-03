@@ -4,9 +4,13 @@ public class Exit extends MotionLessElements {
 /**
  * The Class Exit
  */
-	/** Sprite */
+	/** Sprite 
+	 *@param E @param unbreakableBlock.png 
+	 */
 	private static final Sprite SPRITE = new Sprite('E', "unbreakableBlock.png");
-	/** Sprite */
+	/** Sprite
+	 * @param E @param exit.png
+	 *  */
 	private Sprite EXIT = new Sprite('E', "exit.png");
 	/** Exit reach by the player */
 	private boolean exitReached;
@@ -17,7 +21,9 @@ public class Exit extends MotionLessElements {
 		this.exitReached=false;
 	}
 	
-	/** Check if the player as enough diamond to unlock the exit. */
+	/** Check if the player as enough diamond to unlock the exit. 
+	 *@param diamondNumber 
+	 */
 	public boolean diamondCheck(int diamondNumber) {
 		if(diamondNumber >= 5) {
 			this.setSprite(EXIT);
@@ -26,7 +32,9 @@ public class Exit extends MotionLessElements {
 		}
 		return false;
 	}
-	/** Check if the player has reached the exit */
+	/** Check if the player has reached the exit
+	 * @param Map 
+	 */
 	public void playerCheck(Map map) {
 		Entity entityUp=null;
 		Entity entityRight=null;

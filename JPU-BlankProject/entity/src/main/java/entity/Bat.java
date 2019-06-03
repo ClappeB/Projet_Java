@@ -8,7 +8,10 @@ public class Bat extends Monster {
 	Bat() {
 		super(sprite, Permeability.UNBLOCKING);
 	} 
-	/** Bat's movement */ 
+	/**
+	 *  Bat's movement 
+	 *  @param Map
+	 */ 
 	public void behaviour(Map map) {
 		int random = (int)(Math.random() * 4)+1;
 		

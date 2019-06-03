@@ -8,27 +8,40 @@ public abstract class Factory {
 	private static Player player = null;
 	private static Exit exit = null;
 	
-	/** New Diamond */
+	/** New Diamond 
+	 *@return Diamond 
+	 */
 	public static Entity createDiamond() {
 		return new Diamond();
 	}
 	
-	/** New Rock */
+	/** New Rock 
+	 * 
+	 *@return Rock 
+	 */
 	public static Entity createRock() {
 		return new Rock();
 	}
 	
-	/** New bat */
+	/** New bat 
+	 * 
+	 *@return Bat 
+	 */
 	public static Entity createBat() {
 		return new Bat();
 	}
 	
-	/** New octopus */
+	/** New octopus 
+	 * 
+	 *@return Octopus 
+	 */
 	public static Entity createOctopus() {
 		return new Octopus();
 	}
 	
-	/** New Player with singleton*/
+	/** New Player with singleton
+	 * @return player
+	 */
 	public static Entity createPlayer() {
 		
 		if(player==null) {
@@ -36,7 +49,9 @@ public abstract class Factory {
 		}
 		return player;
 	}
-	/** New Exit with singleton*/
+	/** New Exit with singleton
+	 *@return exit 
+	 */
 	public static Entity createExit() {
 		if(exit==null) {
 			exit = new Exit();
@@ -44,22 +59,32 @@ public abstract class Factory {
 		return exit;
 	} 
 	
-	/** New Dirt */
+	/** New Dirt 
+	 *@return Dirt 
+	 */
 	public static Entity createDirt() {
 		return new Dirt();
 	}
 	
-	/** New UnbreakableBlock */
+	/** New UnbreakableBlock 
+	 * 
+	 * @return UnbreakableBlock
+	 */
 	public static Entity createUnbreakableBlock() {
 		return new UnbreakableBlock();
 	}
 	
-	/** New BackgroundDrit*/
+	/** New BackgroundDirt
+	 *@return BackgroundDirt 
+	 */
 	public static Entity createBackgroundDirt() {
 		return new BackgroundDirt();
 	}
 	
-	/** Choice of the object */
+	/** Choice of the object 
+	 *@param symbol
+	 *@return entity 
+	 */
 	public static Entity getFromFileSymbol(char symbol) throws NoSuchEntityExists {
 		switch(symbol) {
 			case '.':

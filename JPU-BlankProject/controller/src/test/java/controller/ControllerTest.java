@@ -50,7 +50,9 @@ public class ControllerTest {
 		FakeModel() {
 			
 		}
-		/** Fake model get map */
+		/** Fake model get map
+		 * @return null 
+		 *  */
 		@Override
 		public Map getMap() {
 			return null;
@@ -60,7 +62,10 @@ public class ControllerTest {
 		public void loadMap() {
 			
 		}
-		/** Get an obervable */
+		/** Get an obervable 
+		 * @return Observable
+		 * 
+		 */
 		@Override
 		public Observable getObservable() {
 			return new Observable();
@@ -72,7 +77,9 @@ public class ControllerTest {
 		FakeView(FakeModel model) {
 			
 		}
-		/** Fake view print message */
+		/** Fake view print message 
+		 * @param message
+		 * */
 		@Override
 		public void printMessage(String message) {
 			

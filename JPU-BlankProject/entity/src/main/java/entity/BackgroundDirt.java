@@ -5,6 +5,11 @@ public class BackgroundDirt extends MotionLessElements {
 	private static final Sprite sprite = new Sprite('B', "backgroundDirt.png");
 	
 	BackgroundDirt() {
+		/**
+		 * Sprite
+		 * @param sprite
+		 * @param Permeability
+		 */
 		super(sprite, Permeability.NON_INTERACTING);
 	}
 		
