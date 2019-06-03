@@ -36,7 +36,7 @@ class ViewFrame extends JFrame implements KeyListener {
 	 */
 	public ViewFrame(final IModel model) throws HeadlessException {
 		this.buildViewFrame(model);
-		this.setSize(500, 360);
+		this.setSize(655, 680);
 	}
 
 	/**
