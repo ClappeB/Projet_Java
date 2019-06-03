@@ -1,19 +1,14 @@
 package controller;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.Observable;
 
-import javax.swing.text.View;
-
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import contract.ControllerOrder;
-import contract.IController;
 import contract.IModel;
 import contract.IView;
 import entity.Map;

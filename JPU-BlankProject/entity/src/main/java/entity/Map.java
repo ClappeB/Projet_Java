@@ -107,7 +107,7 @@ public class Map extends Observable{
 		this.setChanged();
 		this.notifyObservers();
 	}
-	/** Display the map */
+	/** Display the map on the console*/
 	public void print() {
 		for(int y = 0; y<this.height;y++) {
 			for(int x = 0; x<this.width;x++) {
