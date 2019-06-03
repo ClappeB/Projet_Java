@@ -21,7 +21,7 @@ public final class Controller implements IController {
 
 	/** The model. */
 	private IModel	model;
-
+	/** Controller Order */
 	private ControllerOrder playerOrder;
 	
 	/**
@@ -38,7 +38,7 @@ public final class Controller implements IController {
 	}
 
 	/**
-     * Control.
+     * The way the game will run.
      */
 	/*
 	 * (non-Javadoc)
@@ -155,7 +155,7 @@ public final class Controller implements IController {
 				break;
 		}
 	}
-	
+	/** Player order */
 	public ControllerOrder getOrderPerform() {
 		return this.playerOrder;
 	}

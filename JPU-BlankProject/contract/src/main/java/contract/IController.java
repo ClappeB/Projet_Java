@@ -8,7 +8,7 @@ package contract;
 public interface IController {
 
 	/**
-	 * Control.
+	 * The way the game will run.
 	 */
 	public void control();
 
