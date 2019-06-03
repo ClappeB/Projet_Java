@@ -12,7 +12,7 @@ import contract.IView;
 /**
  * The Class View.
  *
- * @author Jean-Aymeric Diet
+ * 
  */
 public final class View implements IView, Runnable {
 
@@ -52,6 +52,7 @@ public final class View implements IView, Runnable {
 		}
 	}
 
+	/** Print a message */
 	/*
 	 * (non-Javadoc)
 	 *
@@ -61,6 +62,7 @@ public final class View implements IView, Runnable {
 		this.viewFrame.printMessage(message);
 	}
 
+	/** Display the view Frame. */
 	/*
 	 * (non-Javadoc)
 	 *

@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 /**
  * The Class ViewPanel.
  *
- * @author Jean-Aymeric Diet
+ * 
  */
 class ViewPanel extends JPanel implements Observer {
 
@@ -49,6 +49,7 @@ class ViewPanel extends JPanel implements Observer {
 		this.viewFrame = viewFrame;
 	}
 		
+	/** View refresh. */
 	/*
 	 * (non-Javadoc)
 	 *
@@ -58,6 +59,7 @@ class ViewPanel extends JPanel implements Observer {
 		this.repaint();
 	}
 
+	/** Update entity's position. */
 	/*
 	 * (non-Javadoc)
 	 *

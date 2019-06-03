@@ -14,7 +14,7 @@ import contract.IModel;
 /**
  * The Class ViewFrame.
  *
- * @author Jean-Aymeric Diet
+ * 
  */
 class ViewFrame extends JFrame implements KeyListener {
 
@@ -146,6 +146,7 @@ class ViewFrame extends JFrame implements KeyListener {
 		JOptionPane.showMessageDialog(null, message);
 	}
 
+	
 	/*
 	 * (non-Javadoc)
 	 *
@@ -155,6 +156,7 @@ class ViewFrame extends JFrame implements KeyListener {
 
 	}
 
+	/** Call controller. */
 	/*
 	 * (non-Javadoc)
 	 *
