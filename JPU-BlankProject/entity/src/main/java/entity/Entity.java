@@ -1,5 +1,7 @@
 package entity;
 
+import entity.exceptions.WrongCoordinates;
+
 /**
  * The Class Entity.
  *
@@ -38,7 +40,11 @@ public abstract class Entity {
 	}
 
 	public void setPosX(int posX) {
-		this.posX = posX;
+		if(posX<0) {
+			throw new WrongCoordinates("Coordinates can't be negative.");
+		} else {
+			this.posX = posX;
+		}
 	}
 
 	public  int getPosY() {
@@ -46,6 +52,10 @@ public abstract class Entity {
 	}
 
 	public void setPosY(int posY) {
-		this.posY = posY;
+		if(posY<0) {
+			throw new WrongCoordinates("Coordinates can't be negative.");
+		} else {
+			this.posY = posY;
+		}
 	}
 }

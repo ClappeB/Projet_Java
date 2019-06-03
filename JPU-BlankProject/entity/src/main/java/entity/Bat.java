@@ -9,7 +9,7 @@ public class Bat extends Monster {
 	} 
 	
 	public void behaviour(Map map) {
-		int random = (int)(Math.random() * 5);
+		int random = (int)(Math.random() * 4)+1;
 		
 		switch(random) {
 		case 1:

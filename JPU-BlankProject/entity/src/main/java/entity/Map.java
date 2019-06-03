@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
+import entity.exceptions.OutOfMapException;
+
 public class Map extends Observable{
 	
 
@@ -38,8 +40,12 @@ public class Map extends Observable{
 	 * @param y
 	 * @param e
 	 */
-	private void setEntity(int x, int y, Entity e) {
-		map[x][y]=e;
+	private void setEntity(int x, int y, Entity e) throws OutOfMapException {
+		if(x<0 || x>this.getWidth() || y<0 || y>this.getHeight()) {
+			throw new OutOfMapException("Coordinates are out of the map.");
+		} else {
+			map[x][y]=e;
+		}
 	}
 	
 	/**
@@ -49,8 +55,12 @@ public class Map extends Observable{
 	 * @param y
 	 * @return Entity
 	 */
-	public Entity getEntity(int x, int y) {
-		return map[x][y];
+	public Entity getEntity(int x, int y) throws OutOfMapException {
+		if(x<0 || x>this.getWidth() || y<0 || y>this.getHeight()) {
+			throw new OutOfMapException("Coordinates are out of the map.");
+		} else {
+			return map[x][y];
+		}
 	}
 	
 	/**
