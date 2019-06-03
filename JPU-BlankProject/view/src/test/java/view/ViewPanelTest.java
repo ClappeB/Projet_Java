@@ -1,20 +1,13 @@
 package view;
-/**
- * ViewPanel test 
- */
-import static org.junit.Assert.fail;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import java.util.Observable;
 
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import contract.IModel;
 import entity.Map;
-import entity.Sprite;
 
 public class ViewPanelTest {
 	/** a IModel */
@@ -40,7 +33,7 @@ class fakeModel implements IModel {
 	/** Get a map */
     @Override
     public Map getMap() {
-        return null;
+        return new Map(3,3,"BBB!BBB!BBB");
     }
     /** Load a map */
     @Override
