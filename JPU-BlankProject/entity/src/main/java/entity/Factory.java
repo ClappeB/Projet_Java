@@ -1,4 +1,7 @@
 package entity;
+
+import entity.exceptions.NoSuchEntityExists;
+
 /** Pattern Factory */
 public abstract class Factory {
 	
@@ -25,7 +28,7 @@ public abstract class Factory {
 		return new Octopus();
 	}
 	
-	/** New Player */
+	/** New Player with singleton*/
 	public static Entity createPlayer() {
 		
 		if(player==null) {
@@ -33,7 +36,7 @@ public abstract class Factory {
 		}
 		return player;
 	}
-	/** New Exit */
+	/** New Exit with singleton*/
 	public static Entity createExit() {
 		if(exit==null) {
 			exit = new Exit();
@@ -56,8 +59,8 @@ public abstract class Factory {
 		return new BackgroundDirt();
 	}
 	
-	/** Choise of the object */
-	public static Entity getFromFileSymbol(char symbol) {
+	/** Choice of the object */
+	public static Entity getFromFileSymbol(char symbol) throws NoSuchEntityExists {
 		switch(symbol) {
 			case '.':
 				return createDirt();
@@ -78,7 +81,7 @@ public abstract class Factory {
 			case 'E':
 				return createExit();
 			default :
-				return null;
+				throw new NoSuchEntityExists("No entity with the symbol \'"+symbol+"\'  exists.");
 		}
 		
 	}

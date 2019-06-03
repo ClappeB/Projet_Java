@@ -2,6 +2,7 @@ package entity;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -35,6 +36,16 @@ public class BatTest {
 	@Test
 	public void testBat() {
 		assertNotNull("Constructor should instantiate a Bat.", bat);
+	}
+	
+	@Test
+	public void testBatSprite() {
+		assertTrue("Bat sprite should be diamond.png.", bat.getSprite().getImageName().equals("bat.png"));
+	}
+	
+	@Test
+	public void testBatPermeability() {
+		assertTrue("Bat permeability should be unblocking.", bat.getPermeability()==Permeability.UNBLOCKING);
 	}
 
 }

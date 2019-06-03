@@ -26,7 +26,7 @@ public class Exit extends MotionLessElements {
 		}
 		return false;
 	}
-	/** Check if the player have reach the exit */
+	/** Check if the player has reached the exit */
 	public void playerCheck(Map map) {
 		Entity entityUp=null;
 		Entity entityRight=null;
@@ -35,10 +35,10 @@ public class Exit extends MotionLessElements {
 		if(this.getPosY()-1>0) {
 			entityUp = map.getEntity(this.getPosX(), this.getPosY()-1);
 		}
-		if(this.getPosX()+1<map.getWidth()-1) {
+		if(this.getPosX()+1<map.getWidth()) {
 			entityRight = map.getEntity(this.getPosX()+1, this.getPosY());
 		}
-		if(this.getPosY()+1<map.getHeight()-1) {
+		if(this.getPosY()+1<map.getHeight()) {
 			entityDown = map.getEntity(this.getPosX(), this.getPosY()+1);
 		}
 		if(this.getPosX()-1>0) {
