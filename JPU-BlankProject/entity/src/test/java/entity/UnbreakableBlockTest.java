@@ -1,5 +1,7 @@
 package entity;
-
+/**
+ * UnbreakableBlock Test
+ */
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -7,18 +9,16 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class UnbreakableBlockTest {
-
+	/** An unbreakableBlock  */
 	private static UnbreakableBlock unbreakableBlock;
 	
+	/** New unbreakableBlock */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		unbreakableBlock = new UnbreakableBlock();
 	}
 
-	@Before
-	public void setUp() throws Exception {
-	}
-
+	/** Test UnbreakableBlock existence */
 	@Test
 	public void testUnbreakableBlock() {
 		assertNotNull("Constructor should instantiate an Unbreakablelock.", unbreakableBlock);
