@@ -124,6 +124,7 @@ public class Sprite {
 	 */
 	public void loadImage() throws IOException {
 		this.setImage(ImageIO.read(new File("..\\Image jeu\\" + this.getImageName())));
+		this.setImageLoaded(true);
 	}
 	
 }

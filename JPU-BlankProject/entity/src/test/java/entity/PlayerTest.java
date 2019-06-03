@@ -22,8 +22,6 @@ public class PlayerTest {
 	@Before
 	public void setUp() throws Exception {
 		player = new Player();
-		player.setPosX(1);
-		player.setPosY(1);
 	}
 
 	@Test
@@ -56,8 +54,8 @@ public class PlayerTest {
 	public void testCheckMonster() {
 		assertTrue("Player shouldn't detect monsters.", player.isAlive());
 		map = new Map(3,3,"BBB!OPB!BBB");
-		player.checkMonster(map);
-		assertFalse("Player should detect monsters.", player.isAlive());
+		((Player)map.getEntity(1, 1)).checkMonster(map);
+		assertFalse("Player should detect monsters.", ((Player)map.getEntity(1, 1)).isAlive());
 	}
 
 }
