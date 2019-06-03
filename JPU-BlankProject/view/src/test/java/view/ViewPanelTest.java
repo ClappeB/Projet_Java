@@ -1,4 +1,7 @@
 package view;
+/**
+ * ViewPanel test
+ */
 import static org.junit.Assert.assertNotNull;
 
 import java.util.Observable;
