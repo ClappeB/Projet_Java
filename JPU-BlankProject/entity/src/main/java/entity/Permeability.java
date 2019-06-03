@@ -1,9 +1,9 @@
 package entity;
 
 /**
- * The enum Permeability
+ *  The enum Permeability
  * 
- * @author Bruno
+ * 
  */
 
 public enum Permeability {

@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 /**
  * <h1>Sprite class<h1>
  * 
- * @author Bruno
+ * 
  *
  */
 
