@@ -15,7 +15,11 @@ import org.junit.Test;
 public class DBPropertiesTest {
 	
 	private static DBProperties dbProperties;
-	/** New DB Properties. */
+	/** New DB Properties. 
+	 * 
+	 * @throws Exception
+	 *           the Exception
+	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		dbProperties = new DBProperties();

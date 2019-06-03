@@ -3,6 +3,8 @@ package model;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.sql.SQLException;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -11,7 +13,11 @@ import entity.Map;
 public class DAOMapTest {
 	
 	private static DAOMap daoMap;
-	/** New map load. */
+	/** New map load. 
+	 * 
+	 * @throws Exception
+	 *           the Exception
+	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		daoMap = new DAOMap(DBConnection.getInstance().getConnection());

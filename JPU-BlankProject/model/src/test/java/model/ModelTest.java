@@ -3,6 +3,7 @@ package model;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.sql.SQLException;
 import java.util.Observable;
 
 import org.junit.BeforeClass;
@@ -13,7 +14,11 @@ import entity.Map;
 public class ModelTest {
 	
 	private static Model model;
-	/** New model. */
+	/** New model. 
+	 * 
+	 * @throws Exception
+	 *           the Exception
+	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		model = new Model();

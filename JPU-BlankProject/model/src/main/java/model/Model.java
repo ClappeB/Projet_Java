@@ -46,14 +46,7 @@ public final class Model extends Observable implements IModel {
 	/**
      * Load Map.
      *
-     * @param code
-     *            the code
      */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IModel#getMessage(java.lang.String)
-	 */
 	public void loadMap() {
 		try {
 			final DAOMap daoMap = new DAOMap(DBConnection.getInstance().getConnection());

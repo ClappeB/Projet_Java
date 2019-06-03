@@ -38,7 +38,8 @@ class DAOMap {
 	 *
 	 * @param id
 	 *          the id
-	 * @return the e
+	 * @return map
+	 * 			the map
 	 */
 	public Map find() {
 		String level;
