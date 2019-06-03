@@ -1,5 +1,7 @@
 package entity;
-
+/**
+ * Gravity Test 
+ */
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
@@ -10,27 +12,30 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class GravityTest {
-
+	/** Object under gravity */
 	private static Gravity gravity; 
+	/** Variable mapBefore and mapAfter */
 	private static Map mapBefore, mapAfter;
+	/** Variable for comparaison */
 	private static String descriptionOfMap, descriptionOfMap2;
 	
+	/** New rock */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		gravity = new Rock();
 	}
-
+	/** Reset variable before each test */
 	@Before
 	public void setUp() throws Exception {
 		descriptionOfMap="";
 		descriptionOfMap2="";
 	}
-
+	/** Test gravity on an entity */
 	@Test
 	public void testGravity() {
 		assertNotNull("Should instantiate a gravity typed entity",gravity);
 	}
-
+	/** Test the falling of an object */
 	@Test
 	public void testFall() {
 		mapBefore = new Map(3,3,"BBB!BRB!BBB");
@@ -45,7 +50,7 @@ public class GravityTest {
 		}
 		assertFalse("Fall should change the position of the gravity typed object on the map.", descriptionOfMap.equals(descriptionOfMap2));
 	}
-
+	/** Test that object under gravity kill mosnter and player */
 	@Test
 	public void testKill() {
 		mapBefore = new Map(3,3,"BRB!BBB!BPB");
